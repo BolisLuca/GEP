@@ -25,6 +25,7 @@ int main() {
         assert(1 == scanf("%d", &N[i]));
 
         // insert your code here
+int i=0; //test 
     
         printf("%d ", 42); // print the result
     }
