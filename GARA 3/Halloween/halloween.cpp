@@ -51,12 +51,12 @@ int main() {
 			i=1;
 		}
 	}else{
-	i= N%M;	
+	i= N%M;
 	}
 	
 }
 	
-    i=i-1;
+   
     
     
     printf("%d\n",i); // print the result
