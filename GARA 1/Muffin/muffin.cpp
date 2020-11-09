@@ -14,6 +14,7 @@ using namespace std;
 int N, K, i;
 int T[MAXN]={1,-2, 4, -8, 16};
 int massimo,somma=0;
+int minimo=0;
 int main() {
 	cout<<"N";
 	cin>>N;
