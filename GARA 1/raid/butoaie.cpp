@@ -14,6 +14,7 @@
 // input data
 int N, K, Q, P, i;
 int V[MAXN];
+float b;
 
 int main() {
 //  uncomment the following lines if you want to read/write from files
