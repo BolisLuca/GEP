@@ -17,8 +17,9 @@ int N[MAXT];
 
 int main() {
 //  uncomment the following lines if you want to read/write from files
-//  freopen("input.txt", "r", stdin);
-//  freopen("output.txt", "w", stdout);
+
+	freopen("input.txt", "r", stdin);
+  freopen("output.txt", "w", stdout);
 
     assert(1 == scanf("%d", &T));
     for(i=0; i<T+1; i++) {
