@@ -8,27 +8,20 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\Aminsalim\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\cjxbe\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Aminsalim\\Source\\Repos\\BolisLuca\\GEP\\Ottimizzazione\\Ottimizzazione\\Ottimizzazione.csproj",
+      "projectUniqueName": "C:\\Users\\cjxbe\\source\\repos\\BolisLuca\\GEP\\Ottimizzazione\\Ottimizzazione\\Ottimizzazione.csproj",
       "projectName": "Ottimizzazione",
-      "projectPath": "C:\\Users\\Aminsalim\\Source\\Repos\\BolisLuca\\GEP\\Ottimizzazione\\Ottimizzazione\\Ottimizzazione.csproj",
-      "packagesPath": "C:\\Users\\Aminsalim\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Aminsalim\\Source\\Repos\\BolisLuca\\GEP\\Ottimizzazione\\Ottimizzazione\\obj\\",
+      "projectPath": "C:\\Users\\cjxbe\\source\\repos\\BolisLuca\\GEP\\Ottimizzazione\\Ottimizzazione\\Ottimizzazione.csproj",
+      "packagesPath": "C:\\Users\\cjxbe\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\cjxbe\\source\\repos\\BolisLuca\\GEP\\Ottimizzazione\\Ottimizzazione\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Aminsalim\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\cjxbe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
