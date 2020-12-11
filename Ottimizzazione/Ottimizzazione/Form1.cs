@@ -25,9 +25,27 @@ namespace Ottimizzazione
 
         private void buttonCreaTabella_Click(object sender, EventArgs e)
         {
-            if (numericUpDownConsumatori.Value == 0 || numericUpDownProduttori.Value==0)
+
+            if (dataGridViewTabella.Rows.Count == 0)
             {
-                MessageBox.Show("Non ci possono essere 0 consumatori o 0 Produttori","Errore", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                creaTabella();
+            }
+            else
+            {
+                DialogResult dialogresult=MessageBox.Show("Sei sicuro di creare una nuova tabella?", "Attenzione", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dialogresult==DialogResult.Yes)
+                {
+                    creaTabella();
+                }
+            }
+
+        }
+
+        public void creaTabella()
+        {
+            if (numericUpDownConsumatori.Value == 0 || numericUpDownProduttori.Value == 0)
+            {
+                MessageBox.Show("Non ci possono essere 0 consumatori o 0 Produttori", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             DataTable dt = new DataTable();
@@ -36,18 +54,18 @@ namespace Ottimizzazione
             dt.Columns.Add(" ");
             for (int i = 1; i <= numericUpDownConsumatori.Value; i++)
             {
-                dt.Columns.Add("Consumatore"+i);
+                dt.Columns.Add("Consumatore" + i);
             }
 
             // and then add your rows
             for (int i = 1; i <= numericUpDownProduttori.Value; i++)
             {
-  
+
                 // Set values for columns with row[i] = xy
                 dt.Rows.Add("Produttore" + i);
             }
 
-           dataGridViewTabella.DataSource = dt;
+            dataGridViewTabella.DataSource = dt;
             dataGridViewTabella.RowHeadersVisible = false;
             // var ele = new Matrix();
 
@@ -55,15 +73,15 @@ namespace Ottimizzazione
             ////dataGridViewTabella.DataSource = new BindingSource() {DataSource = ele };
 
             //for (int i =0;i<)
-            
+
 
             //for (int i = 1; i < numericUpDownProduttori.Value ; i++)
             //{
             //    dataGridViewTabella.Rows.Add("Produttore" + i);
             //}
             //dataGridViewTabella.Rows.Add("Fabbisogno");
-        }
 
+        }
         private void buttonCosto_Click(object sender, EventArgs e)
         {
             if(numericUpDownMin.Value==0 || numericUpDownMax.Value == 0 || numericUpDownMin.Value > numericUpDownMax.Value)
