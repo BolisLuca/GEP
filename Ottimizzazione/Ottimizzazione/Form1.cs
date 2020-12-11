@@ -63,5 +63,14 @@ namespace Ottimizzazione
             //}
             //dataGridViewTabella.Rows.Add("Fabbisogno");
         }
+
+        private void buttonCosto_Click(object sender, EventArgs e)
+        {
+            if(numericUpDownMin.Value==0 || numericUpDownMax.Value == 0 || numericUpDownMin.Value > numericUpDownMax.Value)
+            {
+                MessageBox.Show(this, "valori non validi", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
     }
 }

@@ -36,16 +36,16 @@
             this.buttonCreaTabella = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownMax = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownMin = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.buttonCosto = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTabella)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownProduttori)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownConsumatori)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMax)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMin)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewTabella
@@ -120,19 +120,19 @@
             this.label4.TabIndex = 11;
             this.label4.Text = "Costo trasporti";
             // 
-            // numericUpDown1
+            // numericUpDownMax
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(498, 65);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 22);
-            this.numericUpDown1.TabIndex = 10;
+            this.numericUpDownMax.Location = new System.Drawing.Point(498, 65);
+            this.numericUpDownMax.Name = "numericUpDownMax";
+            this.numericUpDownMax.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDownMax.TabIndex = 10;
             // 
-            // numericUpDown2
+            // numericUpDownMin
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(353, 65);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(120, 22);
-            this.numericUpDown2.TabIndex = 9;
+            this.numericUpDownMin.Location = new System.Drawing.Point(353, 65);
+            this.numericUpDownMin.Name = "numericUpDownMin";
+            this.numericUpDownMin.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDownMin.TabIndex = 9;
             // 
             // label5
             // 
@@ -160,6 +160,7 @@
             this.buttonCosto.TabIndex = 12;
             this.buttonCosto.Text = "Crea";
             this.buttonCosto.UseVisualStyleBackColor = true;
+            this.buttonCosto.Click += new System.EventHandler(this.buttonCosto_Click);
             // 
             // Form1
             // 
@@ -170,8 +171,8 @@
             this.ClientSize = new System.Drawing.Size(954, 413);
             this.Controls.Add(this.buttonCosto);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.numericUpDown2);
+            this.Controls.Add(this.numericUpDownMax);
+            this.Controls.Add(this.numericUpDownMin);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label3);
@@ -187,8 +188,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTabella)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownProduttori)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownConsumatori)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMax)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,8 +205,8 @@
         private System.Windows.Forms.Button buttonCreaTabella;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown numericUpDownMax;
+        private System.Windows.Forms.NumericUpDown numericUpDownMin;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button buttonCosto;
