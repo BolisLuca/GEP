@@ -27,7 +27,7 @@ namespace Ottimizzazione
         {
             if (numericUpDownConsumatori.Value == 0 || numericUpDownProduttori.Value==0)
             {
-                MessageBox.Show(this,"Non ci possono essere 0 consumatori o 0 Produttori","Errore", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Non ci possono essere 0 consumatori o 0 Produttori","Errore", MessageBoxButtons.OK,MessageBoxIcon.Error);
                 return;
             }
             DataTable dt = new DataTable();
@@ -68,7 +68,7 @@ namespace Ottimizzazione
         {
             if(numericUpDownMin.Value==0 || numericUpDownMax.Value == 0 || numericUpDownMin.Value > numericUpDownMax.Value)
             {
-                MessageBox.Show(this, "valori non validi", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("valori non validi", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
         }
