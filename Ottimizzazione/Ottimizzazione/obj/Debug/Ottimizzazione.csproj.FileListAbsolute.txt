@@ -8,3 +8,13 @@ C:\Users\hp\source\repos\Ottimizzazione\Ottimizzazione\obj\Debug\Ottimizzazione.
 C:\Users\hp\source\repos\Ottimizzazione\Ottimizzazione\obj\Debug\Ottimizzazione.csproj.CoreCompileInputs.cache
 C:\Users\hp\source\repos\Ottimizzazione\Ottimizzazione\obj\Debug\Ottimizzazione.exe
 C:\Users\hp\source\repos\Ottimizzazione\Ottimizzazione\obj\Debug\Ottimizzazione.pdb
+C:\Users\cjxbe\Source\Repos\GEP\Ottimizzazione\Ottimizzazione\bin\Debug\Ottimizzazione.exe.config
+C:\Users\cjxbe\Source\Repos\GEP\Ottimizzazione\Ottimizzazione\bin\Debug\Ottimizzazione.exe
+C:\Users\cjxbe\Source\Repos\GEP\Ottimizzazione\Ottimizzazione\bin\Debug\Ottimizzazione.pdb
+C:\Users\cjxbe\Source\Repos\GEP\Ottimizzazione\Ottimizzazione\obj\Debug\Ottimizzazione.csprojAssemblyReference.cache
+C:\Users\cjxbe\Source\Repos\GEP\Ottimizzazione\Ottimizzazione\obj\Debug\Ottimizzazione.Form1.resources
+C:\Users\cjxbe\Source\Repos\GEP\Ottimizzazione\Ottimizzazione\obj\Debug\Ottimizzazione.Properties.Resources.resources
+C:\Users\cjxbe\Source\Repos\GEP\Ottimizzazione\Ottimizzazione\obj\Debug\Ottimizzazione.csproj.GenerateResource.cache
+C:\Users\cjxbe\Source\Repos\GEP\Ottimizzazione\Ottimizzazione\obj\Debug\Ottimizzazione.csproj.CoreCompileInputs.cache
+C:\Users\cjxbe\Source\Repos\GEP\Ottimizzazione\Ottimizzazione\obj\Debug\Ottimizzazione.exe
+C:\Users\cjxbe\Source\Repos\GEP\Ottimizzazione\Ottimizzazione\obj\Debug\Ottimizzazione.pdb
