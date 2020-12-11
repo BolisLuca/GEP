@@ -48,6 +48,7 @@ namespace Ottimizzazione
             }
 
            dataGridViewTabella.DataSource = dt;
+            dataGridViewTabella.RowHeadersVisible = false;
             // var ele = new Matrix();
 
 
