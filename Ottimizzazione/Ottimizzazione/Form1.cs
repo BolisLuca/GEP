@@ -68,7 +68,7 @@ namespace Ottimizzazione
         {
             if(numericUpDownMin.Value==0 || numericUpDownMax.Value == 0 || numericUpDownMin.Value > numericUpDownMax.Value)
             {
-                MessageBox.Show(this, "valori non validi", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(this, "Valori non validi: non possono essere 0 e il minimo non può essere maggiore del massimo", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
         }
