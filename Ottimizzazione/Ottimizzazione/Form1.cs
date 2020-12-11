@@ -27,7 +27,7 @@ namespace Ottimizzazione
         {
             if (numericUpDownConsumatori.Value == 0 || numericUpDownProduttori.Value==0)
             {
-                MessageBox.Show(this,"Errore: non ci possono essere 0 consumatori o 0 Produttori","error caption", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show(this,"Non ci possono essere 0 consumatori o 0 Produttori","Errore", MessageBoxButtons.OK,MessageBoxIcon.Error);
                 return;
             }
             DataTable dt = new DataTable();
