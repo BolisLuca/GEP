@@ -1,0 +1,15 @@
+C:\Users\hp\Source\Repos\BolisLuca\GEP\Ottimizzazione\Ottimizzazione\bin\Debug\netcoreapp3.1\Ottimizzazione.exe
+C:\Users\hp\Source\Repos\BolisLuca\GEP\Ottimizzazione\Ottimizzazione\bin\Debug\netcoreapp3.1\Ottimizzazione.deps.json
+C:\Users\hp\Source\Repos\BolisLuca\GEP\Ottimizzazione\Ottimizzazione\bin\Debug\netcoreapp3.1\Ottimizzazione.runtimeconfig.json
+C:\Users\hp\Source\Repos\BolisLuca\GEP\Ottimizzazione\Ottimizzazione\bin\Debug\netcoreapp3.1\Ottimizzazione.runtimeconfig.dev.json
+C:\Users\hp\Source\Repos\BolisLuca\GEP\Ottimizzazione\Ottimizzazione\bin\Debug\netcoreapp3.1\Ottimizzazione.dll
+C:\Users\hp\Source\Repos\BolisLuca\GEP\Ottimizzazione\Ottimizzazione\bin\Debug\netcoreapp3.1\Ottimizzazione.pdb
+C:\Users\hp\Source\Repos\BolisLuca\GEP\Ottimizzazione\Ottimizzazione\obj\Debug\netcoreapp3.1\Ottimizzazione.csprojAssemblyReference.cache
+C:\Users\hp\Source\Repos\BolisLuca\GEP\Ottimizzazione\Ottimizzazione\obj\Debug\netcoreapp3.1\Ottimizzazione.Form1.resources
+C:\Users\hp\Source\Repos\BolisLuca\GEP\Ottimizzazione\Ottimizzazione\obj\Debug\netcoreapp3.1\Ottimizzazione.csproj.GenerateResource.cache
+C:\Users\hp\Source\Repos\BolisLuca\GEP\Ottimizzazione\Ottimizzazione\obj\Debug\netcoreapp3.1\Ottimizzazione.csproj.CoreCompileInputs.cache
+C:\Users\hp\Source\Repos\BolisLuca\GEP\Ottimizzazione\Ottimizzazione\obj\Debug\netcoreapp3.1\Ottimizzazione.AssemblyInfoInputs.cache
+C:\Users\hp\Source\Repos\BolisLuca\GEP\Ottimizzazione\Ottimizzazione\obj\Debug\netcoreapp3.1\Ottimizzazione.AssemblyInfo.cs
+C:\Users\hp\Source\Repos\BolisLuca\GEP\Ottimizzazione\Ottimizzazione\obj\Debug\netcoreapp3.1\Ottimizzazione.dll
+C:\Users\hp\Source\Repos\BolisLuca\GEP\Ottimizzazione\Ottimizzazione\obj\Debug\netcoreapp3.1\Ottimizzazione.pdb
+C:\Users\hp\Source\Repos\BolisLuca\GEP\Ottimizzazione\Ottimizzazione\obj\Debug\netcoreapp3.1\Ottimizzazione.genruntimeconfig.cache
