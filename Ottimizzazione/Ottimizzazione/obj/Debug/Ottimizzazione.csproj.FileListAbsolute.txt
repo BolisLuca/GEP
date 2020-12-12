@@ -27,3 +27,13 @@ C:\Users\med19\Source\Repos\BolisLuca\GEP\Ottimizzazione\Ottimizzazione\obj\Debu
 C:\Users\med19\Source\Repos\BolisLuca\GEP\Ottimizzazione\Ottimizzazione\obj\Debug\Ottimizzazione.csproj.GenerateResource.cache
 C:\Users\med19\Source\Repos\BolisLuca\GEP\Ottimizzazione\Ottimizzazione\obj\Debug\Ottimizzazione.exe
 C:\Users\med19\Source\Repos\BolisLuca\GEP\Ottimizzazione\Ottimizzazione\obj\Debug\Ottimizzazione.pdb
+C:\Users\hp\Source\Repos\BolisLuca\GEP\Ottimizzazione\Ottimizzazione\bin\Debug\Ottimizzazione.exe.config
+C:\Users\hp\Source\Repos\BolisLuca\GEP\Ottimizzazione\Ottimizzazione\bin\Debug\Ottimizzazione.exe
+C:\Users\hp\Source\Repos\BolisLuca\GEP\Ottimizzazione\Ottimizzazione\bin\Debug\Ottimizzazione.pdb
+C:\Users\hp\Source\Repos\BolisLuca\GEP\Ottimizzazione\Ottimizzazione\obj\Debug\Ottimizzazione.csprojAssemblyReference.cache
+C:\Users\hp\Source\Repos\BolisLuca\GEP\Ottimizzazione\Ottimizzazione\obj\Debug\Ottimizzazione.Form1.resources
+C:\Users\hp\Source\Repos\BolisLuca\GEP\Ottimizzazione\Ottimizzazione\obj\Debug\Ottimizzazione.Properties.Resources.resources
+C:\Users\hp\Source\Repos\BolisLuca\GEP\Ottimizzazione\Ottimizzazione\obj\Debug\Ottimizzazione.csproj.GenerateResource.cache
+C:\Users\hp\Source\Repos\BolisLuca\GEP\Ottimizzazione\Ottimizzazione\obj\Debug\Ottimizzazione.csproj.CoreCompileInputs.cache
+C:\Users\hp\Source\Repos\BolisLuca\GEP\Ottimizzazione\Ottimizzazione\obj\Debug\Ottimizzazione.exe
+C:\Users\hp\Source\Repos\BolisLuca\GEP\Ottimizzazione\Ottimizzazione\obj\Debug\Ottimizzazione.pdb

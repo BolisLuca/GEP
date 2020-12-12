@@ -67,6 +67,12 @@ namespace Ottimizzazione
 
             dataGridViewTabella.DataSource = dt;
             dataGridViewTabella.RowHeadersVisible = false;
+
+            foreach (DataGridViewColumn column in dataGridViewTabella.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+               
+            }
             // var ele = new Matrix();
 
 
@@ -89,6 +95,20 @@ namespace Ottimizzazione
                 MessageBox.Show("Valori non validi: non possono essere 0 e il minimo non può essere maggiore del massimo", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+        }
+
+        private void dataGridViewTabella_SelectionChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void dataGridViewTabella_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+              if( e.ColumnIndex == 0){
+                MessageBox.Show("Errore", "Errore", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                dataGridViewTabella.CurrentCell =dataGridViewTabella.Rows[1].Cells[1];
+            }
+           
         }
     }
 }
