@@ -58,6 +58,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewTabella.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dataGridViewTabella.BackgroundColor = System.Drawing.Color.PaleGreen;
+            this.dataGridViewTabella.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewTabella.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewTabella.Location = new System.Drawing.Point(32, 145);
             this.dataGridViewTabella.Name = "dataGridViewTabella";
@@ -90,16 +92,28 @@
             // numericUpDownProduttori
             // 
             this.numericUpDownProduttori.Location = new System.Drawing.Point(32, 65);
+            this.numericUpDownProduttori.Maximum = new decimal(new int[] {
+            9999999,
+            0,
+            0,
+            0});
             this.numericUpDownProduttori.Name = "numericUpDownProduttori";
             this.numericUpDownProduttori.Size = new System.Drawing.Size(120, 22);
             this.numericUpDownProduttori.TabIndex = 3;
+            this.numericUpDownProduttori.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // numericUpDownConsumatori
             // 
             this.numericUpDownConsumatori.Location = new System.Drawing.Point(177, 65);
+            this.numericUpDownConsumatori.Maximum = new decimal(new int[] {
+            9999999,
+            0,
+            0,
+            0});
             this.numericUpDownConsumatori.Name = "numericUpDownConsumatori";
             this.numericUpDownConsumatori.Size = new System.Drawing.Size(120, 22);
             this.numericUpDownConsumatori.TabIndex = 4;
+            this.numericUpDownConsumatori.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // buttonCreaTabella
             // 
@@ -134,16 +148,28 @@
             // numericUpDownMax
             // 
             this.numericUpDownMax.Location = new System.Drawing.Point(498, 65);
+            this.numericUpDownMax.Maximum = new decimal(new int[] {
+            9999999,
+            0,
+            0,
+            0});
             this.numericUpDownMax.Name = "numericUpDownMax";
             this.numericUpDownMax.Size = new System.Drawing.Size(120, 22);
             this.numericUpDownMax.TabIndex = 10;
+            this.numericUpDownMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // numericUpDownMin
             // 
             this.numericUpDownMin.Location = new System.Drawing.Point(353, 65);
+            this.numericUpDownMin.Maximum = new decimal(new int[] {
+            9999999,
+            0,
+            0,
+            0});
             this.numericUpDownMin.Name = "numericUpDownMin";
             this.numericUpDownMin.Size = new System.Drawing.Size(120, 22);
             this.numericUpDownMin.TabIndex = 9;
+            this.numericUpDownMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
             // 
@@ -179,6 +205,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.PaleGreen;
             this.ClientSize = new System.Drawing.Size(954, 413);
             this.Controls.Add(this.buttonCosto);
             this.Controls.Add(this.label4);

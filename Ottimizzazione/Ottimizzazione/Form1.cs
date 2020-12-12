@@ -90,13 +90,25 @@ namespace Ottimizzazione
             //dataGridViewTabella.Rows.Add("Fabbisogno");
 
         }
+        Random rand = new Random();
         private void buttonCosto_Click(object sender, EventArgs e)
         {
-            if(numericUpDownMin.Value==0 || numericUpDownMax.Value == 0 || numericUpDownMin.Value > numericUpDownMax.Value)
+            if(numericUpDownMax.Value == 0 || numericUpDownMin.Value > numericUpDownMax.Value)
             {
-                MessageBox.Show("Valori non validi: non possono essere 0 e il minimo non può essere maggiore del massimo", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Valori non validi: Il massimo non può essere 0 e il minimo non può essere maggiore del massimo", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
+            for(int i =0; i<dataGridViewTabella.Rows.Count; i++)
+            {
+                for(int j=1; j < dataGridViewTabella.Columns.Count; j++)
+                {
+                    dataGridViewTabella.Rows[i].Cells[j].Value = rand.Next(int.Parse(numericUpDownMin.Value.ToString()), int.Parse(numericUpDownMax.Value.ToString()));
+                }
+                
+            }
+            
+
         }
 
         private void dataGridViewTabella_SelectionChanged(object sender, EventArgs e)
