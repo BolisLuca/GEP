@@ -71,8 +71,10 @@ namespace Ottimizzazione
             foreach (DataGridViewColumn column in dataGridViewTabella.Columns)
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
+                
                
             }
+            
             // var ele = new Matrix();
 
 

@@ -54,6 +54,10 @@
             this.dataGridViewTabella.AllowUserToDeleteRows = false;
             this.dataGridViewTabella.AllowUserToResizeColumns = false;
             this.dataGridViewTabella.AllowUserToResizeRows = false;
+            this.dataGridViewTabella.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewTabella.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewTabella.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewTabella.Location = new System.Drawing.Point(32, 145);
             this.dataGridViewTabella.Name = "dataGridViewTabella";
