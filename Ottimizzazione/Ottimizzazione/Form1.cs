@@ -143,46 +143,89 @@ namespace Ottimizzazione
                 }
             }
 
-            for (int i =0; i<dataGridViewTabella.Rows.Count-1; i++)
-            {
-                for(int j=1; j < dataGridViewTabella.Columns.Count-1; j++)
-                {
-                    dataGridViewTabella.Rows[i].Cells[j].Value = rand.Next(int.Parse(numericUpDownMinCosti.Value.ToString()), int.Parse(numericUpDownMaxCosti.Value.ToString()));
-                }
-                
-            }
 
-            int totale = 0;
-            for (int i = 1; i < dataGridViewTabella.Columns.Count - 1; i++)
-            {
-                var val = rand.Next(Decimal.ToInt32(numericUpDownMinProdFabb.Value), Decimal.ToInt32(numericUpDownMaxProdFabb.Value));
-                dataGridViewTabella.Rows[dataGridViewTabella.RowCount - 1].Cells[i].Value = val;
-                totale += val;
-            }
+            
 
-            for(int i=0; i < dataGridViewTabella.Rows.Count-2; i++)
-            {
-                int val=0;
-
-                if(totale > (numericUpDownMaxProdFabb.Value- numericUpDownMinProdFabb.Value))
+                for (int i = 0; i < dataGridViewTabella.Rows.Count - 1; i++)
                 {
-                    val = rand.Next(Decimal.ToInt32(numericUpDownMinProdFabb.Value), Decimal.ToInt32(numericUpDownMaxProdFabb.Value));
-                }
-                else
-                {
-                    if (totale < numericUpDownMaxProdFabb.Value && totale > numericUpDownMinProdFabb.Value)
+                    for (int j = 1; j < dataGridViewTabella.Columns.Count - 1; j++)
                     {
-                        val = rand.Next(Decimal.ToInt32(numericUpDownMinProdFabb.Value), totale);
+                        dataGridViewTabella.Rows[i].Cells[j].Value = rand.Next(int.Parse(numericUpDownMinCosti.Value.ToString()), int.Parse(numericUpDownMaxCosti.Value.ToString()));
                     }
-                }
-              
-               
-                 
-                dataGridViewTabella.Rows[i].Cells[dataGridViewTabella.Columns.Count - 1].Value = val;
-                totale -= val;
-            }
-            dataGridViewTabella.Rows[dataGridViewTabella.Rows.Count-2].Cells[dataGridViewTabella.Columns.Count - 1].Value = totale ;
 
+                }
+
+
+            if (dataGridViewTabella.Rows.Count <= dataGridViewTabella.Columns.Count)
+            {
+                //parto da fabbisogno
+                int totale = 0;
+                for (int i = 1; i < dataGridViewTabella.Columns.Count - 1; i++)
+                {
+                    var val = rand.Next(Decimal.ToInt32(numericUpDownMinProdFabb.Value), Decimal.ToInt32(numericUpDownMaxProdFabb.Value));
+                    dataGridViewTabella.Rows[dataGridViewTabella.RowCount - 1].Cells[i].Value = val;
+                    totale += val;
+                }
+
+                for (int i = 0; i < dataGridViewTabella.Rows.Count - 2; i++)
+                {
+                    int val = 0;
+
+                    if (totale > (numericUpDownMaxProdFabb.Value - numericUpDownMinProdFabb.Value))
+                    {
+                        val = rand.Next(Decimal.ToInt32(numericUpDownMinProdFabb.Value), Decimal.ToInt32(numericUpDownMaxProdFabb.Value));
+                    }
+                    else
+                    {
+                        if (totale < numericUpDownMaxProdFabb.Value && totale > numericUpDownMinProdFabb.Value)
+                        {
+                            val = rand.Next(Decimal.ToInt32(numericUpDownMinProdFabb.Value), totale);
+                        }
+                    }
+
+
+
+                    dataGridViewTabella.Rows[i].Cells[dataGridViewTabella.Columns.Count - 1].Value = val;
+                    totale -= val;
+                }
+                dataGridViewTabella.Rows[dataGridViewTabella.Rows.Count - 2].Cells[dataGridViewTabella.Columns.Count - 1].Value = totale;
+            }
+            else
+            {
+                //Parto da Produzione
+               
+
+                int totale = 0;
+                for (int i = 0; i < dataGridViewTabella.Rows.Count - 1; i++)
+                {
+                    var val = rand.Next(Decimal.ToInt32(numericUpDownMinProdFabb.Value), Decimal.ToInt32(numericUpDownMaxProdFabb.Value));
+                    dataGridViewTabella.Rows[i].Cells[dataGridViewTabella.Columns.Count - 1].Value = val;
+                    totale += val;
+                }
+
+                for (int i = 1; i < dataGridViewTabella.Columns.Count - 2; i++)
+                {
+                    int val = 0;
+
+                    if (totale > (numericUpDownMaxProdFabb.Value - numericUpDownMinProdFabb.Value))
+                    {
+                        val = rand.Next(Decimal.ToInt32(numericUpDownMinProdFabb.Value), Decimal.ToInt32(numericUpDownMaxProdFabb.Value));
+                    }
+                    else
+                    {
+                        if (totale < numericUpDownMaxProdFabb.Value && totale > numericUpDownMinProdFabb.Value)
+                        {
+                            val = rand.Next(Decimal.ToInt32(numericUpDownMinProdFabb.Value), totale);
+                        }
+                    }
+
+
+
+                    dataGridViewTabella.Rows[dataGridViewTabella.RowCount-1].Cells[i].Value = val;
+                    totale -= val;
+                }
+                dataGridViewTabella.Rows[dataGridViewTabella.Rows.Count - 1].Cells[dataGridViewTabella.Columns.Count - 2].Value = totale;
+            }
         }
 
         private void dataGridViewTabella_SelectionChanged(object sender, EventArgs e)
