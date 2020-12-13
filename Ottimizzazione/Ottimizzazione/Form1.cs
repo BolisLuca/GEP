@@ -65,7 +65,7 @@ namespace Ottimizzazione
                 // Set values for columns with row[i] = xy
                 dt.Rows.Add("Produttore" + i);
             }
-            dt.Rows.Add("Farbisogno");
+            dt.Rows.Add("Fabbisogno");
             dataGridViewTabella.DataSource = dt;
             dataGridViewTabella.RowHeadersVisible = false;
 
@@ -100,9 +100,9 @@ namespace Ottimizzazione
                 MessageBox.Show("Range non validi: Il massimo non può essere 0 e il minimo non può essere maggiore del massimo", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            for(int i =0; i<dataGridViewTabella.Rows.Count; i++)
+            for(int i =0; i<dataGridViewTabella.Rows.Count-1; i++)
             {
-                for(int j=1; j < dataGridViewTabella.Columns.Count; j++)
+                for(int j=1; j < dataGridViewTabella.Columns.Count-1; j++)
                 {
                     dataGridViewTabella.Rows[i].Cells[j].Value = rand.Next(int.Parse(numericUpDownMinCosti.Value.ToString()), int.Parse(numericUpDownMaxCosti.Value.ToString()));
                 }
