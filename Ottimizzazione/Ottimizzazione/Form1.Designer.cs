@@ -76,7 +76,7 @@
             this.dataGridViewTabella.RowHeadersWidth = 51;
             this.dataGridViewTabella.RowTemplate.Height = 24;
             this.dataGridViewTabella.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridViewTabella.Size = new System.Drawing.Size(662, 168);
+            this.dataGridViewTabella.Size = new System.Drawing.Size(764, 233);
             this.dataGridViewTabella.TabIndex = 0;
             this.dataGridViewTabella.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dataGridViewTabella_CellBeginEdit);
             this.dataGridViewTabella.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridViewTabella_EditingControlShowing);
@@ -307,7 +307,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.PaleGreen;
-            this.ClientSize = new System.Drawing.Size(716, 336);
+            this.ClientSize = new System.Drawing.Size(818, 401);
             this.Controls.Add(this.numericUpDownMaxProdFabb);
             this.Controls.Add(this.numericUpDownMinProdFabb);
             this.Controls.Add(this.label9);
