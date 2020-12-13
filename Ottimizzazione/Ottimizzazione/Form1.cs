@@ -95,6 +95,11 @@ namespace Ottimizzazione
         Random rand = new Random();
         private void buttonCosto_Click(object sender, EventArgs e)
         {
+            if (dataGridViewTabella.DataSource == null)
+            {
+                MessageBox.Show("Devi creare prima la tabella", "Attenzione", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if(numericUpDownMaxCosti.Value == 0 || numericUpDownMinProdFabb.Value == 0 ||numericUpDownMaxProdFabb.Value ==0 || numericUpDownMinCosti.Value > numericUpDownMaxCosti.Value || numericUpDownMinProdFabb.Value > numericUpDownMaxProdFabb.Value)
             {
                 MessageBox.Show("Range non validi: Il massimo non può essere 0 e il minimo non può essere maggiore del massimo", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
