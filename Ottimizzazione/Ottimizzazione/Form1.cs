@@ -93,12 +93,11 @@ namespace Ottimizzazione
         Random rand = new Random();
         private void buttonCosto_Click(object sender, EventArgs e)
         {
-            if(numericUpDownMaxCosti.Value == 0 || numericUpDownMinCosti.Value > numericUpDownMaxCosti.Value)
+            if(numericUpDownMaxCosti.Value == 0 || numericUpDownMaxProdFabb.Value ==0 || numericUpDownMinCosti.Value > numericUpDownMaxCosti.Value || numericUpDownMinProdFabb.Value > numericUpDownMaxProdFabb.Value)
             {
-                MessageBox.Show("Valori non validi: Il massimo non può essere 0 e il minimo non può essere maggiore del massimo", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Range non validi: Il massimo non può essere 0 e il minimo non può essere maggiore del massimo", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
             for(int i =0; i<dataGridViewTabella.Rows.Count; i++)
             {
                 for(int j=1; j < dataGridViewTabella.Columns.Count; j++)
