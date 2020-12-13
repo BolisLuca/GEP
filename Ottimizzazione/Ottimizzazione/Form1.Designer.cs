@@ -36,16 +36,24 @@
             this.buttonCreaTabella = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.numericUpDownMax = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownMin = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownMaxCosti = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownMinCosti = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.buttonCosto = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.numericUpDownMaxProdFabb = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownMinProdFabb = new System.Windows.Forms.NumericUpDown();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTabella)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownProduttori)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownConsumatori)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMax)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaxCosti)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinCosti)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaxProdFabb)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinProdFabb)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewTabella
@@ -61,12 +69,12 @@
             this.dataGridViewTabella.BackgroundColor = System.Drawing.Color.PaleGreen;
             this.dataGridViewTabella.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewTabella.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewTabella.Location = new System.Drawing.Point(32, 145);
+            this.dataGridViewTabella.Location = new System.Drawing.Point(38, 177);
             this.dataGridViewTabella.Name = "dataGridViewTabella";
             this.dataGridViewTabella.RowHeadersWidth = 51;
             this.dataGridViewTabella.RowTemplate.Height = 24;
             this.dataGridViewTabella.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridViewTabella.Size = new System.Drawing.Size(882, 256);
+            this.dataGridViewTabella.Size = new System.Drawing.Size(882, 207);
             this.dataGridViewTabella.TabIndex = 0;
             this.dataGridViewTabella.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dataGridViewTabella_CellBeginEdit);
             this.dataGridViewTabella.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridViewTabella_EditingControlShowing);
@@ -102,6 +110,11 @@
             this.numericUpDownProduttori.Size = new System.Drawing.Size(120, 22);
             this.numericUpDownProduttori.TabIndex = 3;
             this.numericUpDownProduttori.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericUpDownProduttori.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             // 
             // numericUpDownConsumatori
             // 
@@ -115,6 +128,11 @@
             this.numericUpDownConsumatori.Size = new System.Drawing.Size(120, 22);
             this.numericUpDownConsumatori.TabIndex = 4;
             this.numericUpDownConsumatori.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericUpDownConsumatori.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             // 
             // buttonCreaTabella
             // 
@@ -140,42 +158,42 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(381, 9);
+            this.label4.Location = new System.Drawing.Point(355, 9);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(199, 32);
             this.label4.TabIndex = 11;
             this.label4.Text = "Costo trasporti";
             // 
-            // numericUpDownMax
+            // numericUpDownMaxCosti
             // 
-            this.numericUpDownMax.Location = new System.Drawing.Point(498, 65);
-            this.numericUpDownMax.Maximum = new decimal(new int[] {
+            this.numericUpDownMaxCosti.Location = new System.Drawing.Point(599, 65);
+            this.numericUpDownMaxCosti.Maximum = new decimal(new int[] {
             9999999,
             0,
             0,
             0});
-            this.numericUpDownMax.Name = "numericUpDownMax";
-            this.numericUpDownMax.Size = new System.Drawing.Size(120, 22);
-            this.numericUpDownMax.TabIndex = 10;
-            this.numericUpDownMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericUpDownMaxCosti.Name = "numericUpDownMaxCosti";
+            this.numericUpDownMaxCosti.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDownMaxCosti.TabIndex = 10;
+            this.numericUpDownMaxCosti.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // numericUpDownMin
+            // numericUpDownMinCosti
             // 
-            this.numericUpDownMin.Location = new System.Drawing.Point(353, 65);
-            this.numericUpDownMin.Maximum = new decimal(new int[] {
+            this.numericUpDownMinCosti.Location = new System.Drawing.Point(454, 65);
+            this.numericUpDownMinCosti.Maximum = new decimal(new int[] {
             9999999,
             0,
             0,
             0});
-            this.numericUpDownMin.Name = "numericUpDownMin";
-            this.numericUpDownMin.Size = new System.Drawing.Size(120, 22);
-            this.numericUpDownMin.TabIndex = 9;
-            this.numericUpDownMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericUpDownMinCosti.Name = "numericUpDownMinCosti";
+            this.numericUpDownMinCosti.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDownMinCosti.TabIndex = 9;
+            this.numericUpDownMinCosti.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(513, 45);
+            this.label5.Location = new System.Drawing.Point(614, 45);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 17);
             this.label5.TabIndex = 8;
@@ -184,7 +202,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(373, 45);
+            this.label6.Location = new System.Drawing.Point(474, 45);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 17);
             this.label6.TabIndex = 7;
@@ -192,13 +210,75 @@
             // 
             // buttonCosto
             // 
-            this.buttonCosto.Location = new System.Drawing.Point(447, 93);
+            this.buttonCosto.Location = new System.Drawing.Point(832, 37);
             this.buttonCosto.Name = "buttonCosto";
-            this.buttonCosto.Size = new System.Drawing.Size(99, 34);
+            this.buttonCosto.Size = new System.Drawing.Size(112, 90);
             this.buttonCosto.TabIndex = 12;
-            this.buttonCosto.Text = "Crea";
+            this.buttonCosto.Text = "Genera";
             this.buttonCosto.UseVisualStyleBackColor = true;
             this.buttonCosto.Click += new System.EventHandler(this.buttonCosto_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(358, 67);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(87, 17);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Range costi:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(358, 115);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(194, 17);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Range Produzioni/Fabbisogni";
+            // 
+            // numericUpDownMaxProdFabb
+            // 
+            this.numericUpDownMaxProdFabb.Location = new System.Drawing.Point(706, 113);
+            this.numericUpDownMaxProdFabb.Maximum = new decimal(new int[] {
+            9999999,
+            0,
+            0,
+            0});
+            this.numericUpDownMaxProdFabb.Name = "numericUpDownMaxProdFabb";
+            this.numericUpDownMaxProdFabb.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDownMaxProdFabb.TabIndex = 18;
+            this.numericUpDownMaxProdFabb.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // numericUpDownMinProdFabb
+            // 
+            this.numericUpDownMinProdFabb.Location = new System.Drawing.Point(561, 113);
+            this.numericUpDownMinProdFabb.Maximum = new decimal(new int[] {
+            9999999,
+            0,
+            0,
+            0});
+            this.numericUpDownMinProdFabb.Name = "numericUpDownMinProdFabb";
+            this.numericUpDownMinProdFabb.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDownMinProdFabb.TabIndex = 17;
+            this.numericUpDownMinProdFabb.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(730, 93);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(67, 17);
+            this.label9.TabIndex = 16;
+            this.label9.Text = "Massimo:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(587, 93);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(56, 17);
+            this.label10.TabIndex = 15;
+            this.label10.Text = "Minimo:";
             // 
             // Form1
             // 
@@ -208,10 +288,16 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.PaleGreen;
             this.ClientSize = new System.Drawing.Size(954, 413);
+            this.Controls.Add(this.numericUpDownMaxProdFabb);
+            this.Controls.Add(this.numericUpDownMinProdFabb);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.buttonCosto);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.numericUpDownMax);
-            this.Controls.Add(this.numericUpDownMin);
+            this.Controls.Add(this.numericUpDownMaxCosti);
+            this.Controls.Add(this.numericUpDownMinCosti);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label3);
@@ -227,8 +313,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTabella)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownProduttori)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownConsumatori)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMax)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaxCosti)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinCosti)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaxProdFabb)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinProdFabb)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -244,11 +332,17 @@
         private System.Windows.Forms.Button buttonCreaTabella;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown numericUpDownMax;
-        private System.Windows.Forms.NumericUpDown numericUpDownMin;
+        private System.Windows.Forms.NumericUpDown numericUpDownMaxCosti;
+        private System.Windows.Forms.NumericUpDown numericUpDownMinCosti;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button buttonCosto;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.NumericUpDown numericUpDownMaxProdFabb;
+        private System.Windows.Forms.NumericUpDown numericUpDownMinProdFabb;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
     }
 }
 
