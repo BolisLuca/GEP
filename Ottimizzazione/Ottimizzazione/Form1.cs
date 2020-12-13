@@ -75,6 +75,7 @@ namespace Ottimizzazione
                 
                
             }
+            dataGridViewTabella.AutoResizeColumns();
             
             // var ele = new Matrix();
 
