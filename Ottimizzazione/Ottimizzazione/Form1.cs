@@ -124,5 +124,22 @@ namespace Ottimizzazione
             }
            
         }
+
+        private void dataGridViewTabella_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            e.Control.KeyPress += new KeyPressEventHandler(CheckKey);
+        }
+
+        private void CheckKey(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar)
+                && !char.IsDigit(e.KeyChar)
+               && e.KeyChar != '.') //se non è un carattere di controllo Unicode, se non è un digit o se è diverso da . non accetto la modifica
+            {
+                e.Handled = true; //evento control.key press gestito -->non accetta la modifica richiesta
+            }
+        }
+
+
     }
 }

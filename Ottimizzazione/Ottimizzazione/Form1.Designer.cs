@@ -69,6 +69,7 @@
             this.dataGridViewTabella.Size = new System.Drawing.Size(882, 256);
             this.dataGridViewTabella.TabIndex = 0;
             this.dataGridViewTabella.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dataGridViewTabella_CellBeginEdit);
+            this.dataGridViewTabella.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridViewTabella_EditingControlShowing);
             this.dataGridViewTabella.SelectionChanged += new System.EventHandler(this.dataGridViewTabella_SelectionChanged);
             // 
             // label1
