@@ -105,7 +105,44 @@ namespace Ottimizzazione
                 MessageBox.Show("Range non validi: Il massimo non può essere 0 e il minimo non può essere maggiore del massimo", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            for(int i =0; i<dataGridViewTabella.Rows.Count-1; i++)
+
+            bool modificheEseguite = false;
+
+            //-scegliere colori
+
+            //-relativizzare la dimensione
+
+            for (int i = 0; i < dataGridViewTabella.Rows.Count; i++)
+            {
+                for (int j = 1; j < dataGridViewTabella.Columns.Count; j++)
+                {
+                    //if (dataGridViewTabella.Rows[i].Cells[j].Value != "")
+
+                    if (dataGridViewTabella.Rows[i].Cells[j].Value != null || dataGridViewTabella.Rows[i].Cells[j].Value != DBNull.Value || !String.IsNullOrWhiteSpace(dataGridViewTabella.Rows[i].Cells[j].Value.ToString()))
+                    {
+                        modificheEseguite = true;
+                        break;
+                        
+                    }
+
+                }
+                if (modificheEseguite)
+                {
+                    break;
+                }
+            }
+
+
+            if (modificheEseguite)
+            {
+                DialogResult dialogresult = MessageBox.Show("Sei sicuro di voler generare nuovi valori?", "Attenzione", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dialogresult == DialogResult.No)
+                {
+                    return;
+                }
+            }
+
+            for (int i =0; i<dataGridViewTabella.Rows.Count-1; i++)
             {
                 for(int j=1; j < dataGridViewTabella.Columns.Count-1; j++)
                 {
