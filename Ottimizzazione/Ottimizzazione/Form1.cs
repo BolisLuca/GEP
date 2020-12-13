@@ -56,6 +56,7 @@ namespace Ottimizzazione
             {
                 dt.Columns.Add("Consumatore" + i);
             }
+            dt.Columns.Add("Produzione");
 
             // and then add your rows
             for (int i = 1; i <= numericUpDownProduttori.Value; i++)
@@ -64,7 +65,7 @@ namespace Ottimizzazione
                 // Set values for columns with row[i] = xy
                 dt.Rows.Add("Produttore" + i);
             }
-
+            dt.Rows.Add("Farbisogno");
             dataGridViewTabella.DataSource = dt;
             dataGridViewTabella.RowHeadersVisible = false;
 
