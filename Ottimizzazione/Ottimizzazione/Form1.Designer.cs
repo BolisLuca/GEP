@@ -111,7 +111,7 @@
             this.numericUpDownProduttori.TabIndex = 3;
             this.numericUpDownProduttori.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDownProduttori.Value = new decimal(new int[] {
-            10,
+            5,
             0,
             0,
             0});
@@ -129,7 +129,7 @@
             this.numericUpDownConsumatori.TabIndex = 4;
             this.numericUpDownConsumatori.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDownConsumatori.Value = new decimal(new int[] {
-            10,
+            5,
             0,
             0,
             0});

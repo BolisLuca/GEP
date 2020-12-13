@@ -95,7 +95,7 @@ namespace Ottimizzazione
         Random rand = new Random();
         private void buttonCosto_Click(object sender, EventArgs e)
         {
-            if(numericUpDownMaxCosti.Value == 0 || numericUpDownMaxProdFabb.Value ==0 || numericUpDownMinCosti.Value > numericUpDownMaxCosti.Value || numericUpDownMinProdFabb.Value > numericUpDownMaxProdFabb.Value)
+            if(numericUpDownMaxCosti.Value == 0 || numericUpDownMinProdFabb.Value == 0 ||numericUpDownMaxProdFabb.Value ==0 || numericUpDownMinCosti.Value > numericUpDownMaxCosti.Value || numericUpDownMinProdFabb.Value > numericUpDownMaxProdFabb.Value)
             {
                 MessageBox.Show("Range non validi: Il massimo non può essere 0 e il minimo non può essere maggiore del massimo", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -108,7 +108,37 @@ namespace Ottimizzazione
                 }
                 
             }
-            
+
+            int totale = 0;
+            for (int i = 1; i < dataGridViewTabella.Columns.Count - 1; i++)
+            {
+                var val = rand.Next(Decimal.ToInt32(numericUpDownMinProdFabb.Value), Decimal.ToInt32(numericUpDownMaxProdFabb.Value));
+                dataGridViewTabella.Rows[dataGridViewTabella.RowCount - 1].Cells[i].Value = val;
+                totale += val;
+            }
+
+            for(int i=0; i < dataGridViewTabella.Rows.Count-2; i++)
+            {
+                int val=0;
+
+                if(totale > (numericUpDownMaxProdFabb.Value- numericUpDownMinProdFabb.Value))
+                {
+                    val = rand.Next(Decimal.ToInt32(numericUpDownMinProdFabb.Value), Decimal.ToInt32(numericUpDownMaxProdFabb.Value));
+                }
+                else
+                {
+                    if (totale < numericUpDownMaxProdFabb.Value && totale > numericUpDownMinProdFabb.Value)
+                    {
+                        val = rand.Next(Decimal.ToInt32(numericUpDownMinProdFabb.Value), totale);
+                    }
+                }
+              
+               
+                 
+                dataGridViewTabella.Rows[i].Cells[dataGridViewTabella.Columns.Count - 1].Value = val;
+                totale -= val;
+            }
+            dataGridViewTabella.Rows[dataGridViewTabella.Rows.Count-2].Cells[dataGridViewTabella.Columns.Count - 1].Value = totale ;
 
         }
 
