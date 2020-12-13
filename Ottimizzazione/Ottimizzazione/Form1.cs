@@ -43,7 +43,7 @@ namespace Ottimizzazione
 
         public void creaTabella()
         {
-            if (numericUpDownConsumatori.Value == 0 || numericUpDownProduttori.Value == 0)
+            if (numericUpDownConsumatori.Value == 0 || numericUpDownProduttori.Value == 0 || numericUpDownConsumatori.Text=="" || numericUpDownProduttori.Text=="")
             {
                 MessageBox.Show("Non ci possono essere 0 consumatori o 0 Produttori", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
