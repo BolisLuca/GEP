@@ -43,6 +43,7 @@ namespace Ottimizzazione
 
         public void creaTabella()
         {
+            dataGridViewTabella.DataSource = null;
             if (numericUpDownConsumatori.Value == 0 || numericUpDownProduttori.Value == 0 || numericUpDownConsumatori.Text=="" || numericUpDownProduttori.Text=="")
             {
                 MessageBox.Show("Non ci possono essere 0 consumatori o 0 Produttori", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -118,7 +119,7 @@ namespace Ottimizzazione
                 {
                     //if (dataGridViewTabella.Rows[i].Cells[j].Value != "")
 
-                    if (dataGridViewTabella.Rows[i].Cells[j].Value != null || dataGridViewTabella.Rows[i].Cells[j].Value != DBNull.Value || !String.IsNullOrWhiteSpace(dataGridViewTabella.Rows[i].Cells[j].Value.ToString()))
+                    if (dataGridViewTabella.Rows[i].Cells[j].Value.ToString() != "")
                     {
                         modificheEseguite = true;
                         break;
