@@ -44,9 +44,9 @@ namespace Ottimizzazione
         public void creaTabella()
         {
             dataGridViewTabella.DataSource = null;
-            if (numericUpDownConsumatori.Value == 0 || numericUpDownProduttori.Value == 0 || numericUpDownConsumatori.Text=="" || numericUpDownProduttori.Text=="")
+            if (numericUpDownConsumatori.Value < 2 || numericUpDownProduttori.Value < 2 || numericUpDownConsumatori.Text=="" || numericUpDownProduttori.Text=="")
             {
-                MessageBox.Show("Non ci possono essere 0 consumatori o 0 Produttori", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Inserire produttori e consumatori maggiori di 1", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             DataTable dt = new DataTable();
