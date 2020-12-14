@@ -32,7 +32,7 @@ namespace Ottimizzazione
             }
             else
             {
-                DialogResult dialogresult=MessageBox.Show("Sei sicuro di creare una nuova tabella?", "Attenzione", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult dialogresult=MessageBox.Show("Sei sicuro di creare una nuova tabella? ", "Attenzione!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dialogresult==DialogResult.Yes)
                 {
                     creaTabella();
