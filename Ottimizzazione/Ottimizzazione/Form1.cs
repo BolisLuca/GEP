@@ -268,7 +268,61 @@ namespace Ottimizzazione
 
                 case 1:
                     {
-                        break;
+                        dataGridViewNordOvest.DataSource = dataGridViewTabella.DataSource;
+
+                        int costo_totale = 0;
+                        //se produzione > fabbisogno ---> il fabbisogno verrà riempito completamente 
+                        do
+                        {
+                            if (Convert.ToInt32(dataGridViewNordOvest.Rows[0].Cells[dataGridViewNordOvest.ColumnCount - 1].Value) > Convert.ToInt32(dataGridViewNordOvest.Rows[dataGridViewNordOvest.Rows.Count -1 ].Cells[1].Value))
+                            {
+                                int differenza = Convert.ToInt32(dataGridViewNordOvest.Rows[0].Cells[dataGridViewNordOvest.ColumnCount - 1].Value) - Convert.ToInt32(dataGridViewNordOvest.Rows[dataGridViewNordOvest.Rows.Count - 1].Cells[1].Value);
+
+                                int costo_per_prodotto = Convert.ToInt32(dataGridViewNordOvest.Rows[0].Cells[1].Value);
+
+                                int costo_consegna = costo_per_prodotto * Convert.ToInt32(dataGridViewNordOvest.Rows[dataGridViewNordOvest.Rows.Count -1 ].Cells[1].Value);
+
+
+                                costo_totale += costo_consegna;
+
+                                dataGridViewNordOvest.Rows[0].Cells[dataGridViewNordOvest.ColumnCount - 1].Value = differenza;
+
+                                dataGridViewNordOvest.Columns.RemoveAt(0);
+
+
+
+                            }
+                            else if (Convert.ToInt32(dataGridViewNordOvest.Rows[0].Cells[dataGridViewNordOvest.ColumnCount - 1].Value) == Convert.ToInt32(dataGridViewNordOvest.Rows[dataGridViewNordOvest.Rows.Count - 1].Cells[1].Value))
+                            {
+                                int costo_per_prodotto = Convert.ToInt32(dataGridViewNordOvest.Rows[0].Cells[1].Value);
+
+                                int costo_consegna = costo_per_prodotto * Convert.ToInt32(dataGridViewNordOvest.Rows[dataGridViewNordOvest.Rows.Count -1 ].Cells[1].Value);
+
+                                costo_totale += costo_consegna;
+
+                                dataGridViewNordOvest.Columns.RemoveAt(0);
+
+                                dataGridViewNordOvest.Rows.RemoveAt(0);
+                            }
+                            else //minore
+                            {
+                                int differenza = Math.Abs(Convert.ToInt32(dataGridViewNordOvest.Rows[0].Cells[dataGridViewNordOvest.ColumnCount - 1].Value) - Convert.ToInt32(dataGridViewNordOvest.Rows[dataGridViewNordOvest.Rows.Count -1].Cells[1].Value));
+
+                                int costo_per_prodotto = Convert.ToInt32(dataGridViewNordOvest.Rows[0].Cells[1].Value);
+
+                                int costo_consegna = costo_per_prodotto * Convert.ToInt32(dataGridViewNordOvest.Rows[0].Cells[dataGridViewNordOvest.ColumnCount - 1].Value);
+
+                                costo_totale += costo_consegna;
+
+                                dataGridViewNordOvest.Rows[dataGridViewNordOvest.Rows.Count].Cells[1].Value = differenza;
+
+                                dataGridViewNordOvest.Rows.RemoveAt(0);
+                            }
+
+                        } while (dataGridViewNordOvest.Rows.Count == 1);
+                            //dataGridViewNordOvest.Rows[0].Cells[1].Value * dataGridViewNordOvest.Rows[0].Cells[data]
+
+                            break;
                     }
             }
         }
