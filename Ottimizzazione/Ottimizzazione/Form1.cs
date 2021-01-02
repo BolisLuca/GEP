@@ -67,7 +67,7 @@ namespace Ottimizzazione
                 dt.Rows.Add("Produttore" + i);
             }
             dt.Rows.Add("Fabbisogno");
-            dataGridViewTabella.DataSource = dt;
+            dataGridViewTabella.DataSource = new BindingSource() { DataSource = dt };
             dataGridViewTabella.RowHeadersVisible = false;
 
             foreach (DataGridViewColumn column in dataGridViewTabella.Columns)
@@ -268,12 +268,21 @@ namespace Ottimizzazione
 
                 case 1:
                     {
+                        
                         dataGridViewNordOvest.DataSource = dataGridViewTabella.DataSource;
 
                         int costo_totale = 0;
                         //se produzione > fabbisogno ---> il fabbisogno verrà riempito completamente 
+
+                      
+                        
+                           
+                        
+
                         do
-                        {
+                        { 
+                           
+
                             if (Convert.ToInt32(dataGridViewNordOvest.Rows[0].Cells[dataGridViewNordOvest.ColumnCount - 1].Value) > Convert.ToInt32(dataGridViewNordOvest.Rows[dataGridViewNordOvest.Rows.Count -1 ].Cells[1].Value))
                             {
                                 int differenza = Convert.ToInt32(dataGridViewNordOvest.Rows[0].Cells[dataGridViewNordOvest.ColumnCount - 1].Value) - Convert.ToInt32(dataGridViewNordOvest.Rows[dataGridViewNordOvest.Rows.Count - 1].Cells[1].Value);
@@ -287,7 +296,7 @@ namespace Ottimizzazione
 
                                 dataGridViewNordOvest.Rows[0].Cells[dataGridViewNordOvest.ColumnCount - 1].Value = differenza;
 
-                                dataGridViewNordOvest.Columns.RemoveAt(0);
+                                dataGridViewNordOvest.Columns.RemoveAt(1);
 
 
 
@@ -300,9 +309,14 @@ namespace Ottimizzazione
 
                                 costo_totale += costo_consegna;
 
-                                dataGridViewNordOvest.Columns.RemoveAt(0);
 
-                                dataGridViewNordOvest.Rows.RemoveAt(0);
+                               if(!(dataGridViewNordOvest.Rows.Count == 2 && dataGridViewNordOvest.Columns.Count == 1))
+                                {
+                                    dataGridViewNordOvest.Columns.RemoveAt(1);
+
+                                    dataGridViewNordOvest.Rows.RemoveAt(0);
+                                }
+                                
                             }
                             else //minore
                             {
@@ -314,7 +328,7 @@ namespace Ottimizzazione
 
                                 costo_totale += costo_consegna;
 
-                                dataGridViewNordOvest.Rows[dataGridViewNordOvest.Rows.Count].Cells[1].Value = differenza;
+                                dataGridViewNordOvest.Rows[dataGridViewNordOvest.Rows.Count - 1].Cells[1].Value = differenza;
 
                                 dataGridViewNordOvest.Rows.RemoveAt(0);
                             }
