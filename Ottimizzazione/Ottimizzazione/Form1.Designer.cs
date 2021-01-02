@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.dataGridViewTabella = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.numericUpDownProduttori = new System.Windows.Forms.NumericUpDown();
@@ -50,40 +49,23 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.btnNord = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTabella)).BeginInit();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dataGridViewTabella = new System.Windows.Forms.DataGridView();
+            this.dataGridViewNordOvest = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownProduttori)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownConsumatori)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaxCosti)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinCosti)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaxProdFabb)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinProdFabb)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTabella)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNordOvest)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataGridViewTabella
-            // 
-            this.dataGridViewTabella.AllowUserToAddRows = false;
-            this.dataGridViewTabella.AllowUserToDeleteRows = false;
-            this.dataGridViewTabella.AllowUserToResizeColumns = false;
-            this.dataGridViewTabella.AllowUserToResizeRows = false;
-            this.dataGridViewTabella.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewTabella.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.dataGridViewTabella.BackgroundColor = System.Drawing.Color.PaleGreen;
-            this.dataGridViewTabella.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridViewTabella.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewTabella.Location = new System.Drawing.Point(37, 177);
-            this.dataGridViewTabella.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridViewTabella.Name = "dataGridViewTabella";
-            this.dataGridViewTabella.RowHeadersWidth = 51;
-            this.dataGridViewTabella.RowTemplate.Height = 24;
-            this.dataGridViewTabella.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridViewTabella.Size = new System.Drawing.Size(1086, 287);
-            this.dataGridViewTabella.TabIndex = 0;
-            this.dataGridViewTabella.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dataGridViewTabella_CellBeginEdit);
-            this.dataGridViewTabella.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridViewTabella_EditingControlShowing);
-            this.dataGridViewTabella.SelectionChanged += new System.EventHandler(this.dataGridViewTabella_SelectionChanged);
             // 
             // label1
             // 
@@ -315,15 +297,82 @@
             this.label12.TabIndex = 20;
             this.label12.Text = "-";
             // 
-            // btnNord
+            // tabControl1
             // 
-            this.btnNord.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnNord.Location = new System.Drawing.Point(1004, 98);
-            this.btnNord.Name = "btnNord";
-            this.btnNord.Size = new System.Drawing.Size(107, 47);
-            this.btnNord.TabIndex = 21;
-            this.btnNord.Text = "Nord-Ovest";
-            this.btnNord.UseVisualStyleBackColor = false;
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(32, 161);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1200, 383);
+            this.tabControl1.TabIndex = 21;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.dataGridViewTabella);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1192, 354);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Matrice Iniziale";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.dataGridViewNordOvest);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1192, 354);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Nord - Ovest";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewTabella
+            // 
+            this.dataGridViewTabella.AllowUserToAddRows = false;
+            this.dataGridViewTabella.AllowUserToDeleteRows = false;
+            this.dataGridViewTabella.AllowUserToResizeColumns = false;
+            this.dataGridViewTabella.AllowUserToResizeRows = false;
+            this.dataGridViewTabella.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewTabella.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dataGridViewTabella.BackgroundColor = System.Drawing.Color.PaleGreen;
+            this.dataGridViewTabella.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewTabella.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewTabella.Location = new System.Drawing.Point(0, 2);
+            this.dataGridViewTabella.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridViewTabella.Name = "dataGridViewTabella";
+            this.dataGridViewTabella.RowHeadersWidth = 51;
+            this.dataGridViewTabella.RowTemplate.Height = 24;
+            this.dataGridViewTabella.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dataGridViewTabella.Size = new System.Drawing.Size(1190, 350);
+            this.dataGridViewTabella.TabIndex = 2;
+            // 
+            // dataGridViewNordOvest
+            // 
+            this.dataGridViewNordOvest.AllowUserToAddRows = false;
+            this.dataGridViewNordOvest.AllowUserToDeleteRows = false;
+            this.dataGridViewNordOvest.AllowUserToResizeColumns = false;
+            this.dataGridViewNordOvest.AllowUserToResizeRows = false;
+            this.dataGridViewNordOvest.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewNordOvest.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dataGridViewNordOvest.BackgroundColor = System.Drawing.Color.PaleGreen;
+            this.dataGridViewNordOvest.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewNordOvest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewNordOvest.Location = new System.Drawing.Point(1, 0);
+            this.dataGridViewNordOvest.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridViewNordOvest.Name = "dataGridViewNordOvest";
+            this.dataGridViewNordOvest.RowHeadersWidth = 51;
+            this.dataGridViewNordOvest.RowTemplate.Height = 24;
+            this.dataGridViewNordOvest.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dataGridViewNordOvest.Size = new System.Drawing.Size(1190, 352);
+            this.dataGridViewNordOvest.TabIndex = 3;
             // 
             // Form1
             // 
@@ -332,8 +381,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.PaleGreen;
-            this.ClientSize = new System.Drawing.Size(1158, 494);
-            this.Controls.Add(this.btnNord);
+            this.ClientSize = new System.Drawing.Size(1244, 556);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.numericUpDownMaxProdFabb);
@@ -354,28 +403,29 @@
             this.Controls.Add(this.numericUpDownProduttori);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridViewTabella);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ottimizzazione";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTabella)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownProduttori)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownConsumatori)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaxCosti)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinCosti)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaxProdFabb)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinProdFabb)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTabella)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNordOvest)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridViewTabella;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown numericUpDownProduttori;
@@ -396,7 +446,11 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button btnNord;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.DataGridView dataGridViewTabella;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.DataGridView dataGridViewNordOvest;
     }
 }
 
