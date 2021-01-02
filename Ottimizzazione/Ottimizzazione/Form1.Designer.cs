@@ -50,6 +50,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.btnNord = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTabella)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownProduttori)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownConsumatori)).BeginInit();
@@ -78,7 +79,7 @@
             this.dataGridViewTabella.RowHeadersWidth = 51;
             this.dataGridViewTabella.RowTemplate.Height = 24;
             this.dataGridViewTabella.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridViewTabella.Size = new System.Drawing.Size(981, 287);
+            this.dataGridViewTabella.Size = new System.Drawing.Size(1086, 287);
             this.dataGridViewTabella.TabIndex = 0;
             this.dataGridViewTabella.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dataGridViewTabella_CellBeginEdit);
             this.dataGridViewTabella.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridViewTabella_EditingControlShowing);
@@ -314,6 +315,16 @@
             this.label12.TabIndex = 20;
             this.label12.Text = "-";
             // 
+            // btnNord
+            // 
+            this.btnNord.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnNord.Location = new System.Drawing.Point(1004, 98);
+            this.btnNord.Name = "btnNord";
+            this.btnNord.Size = new System.Drawing.Size(107, 47);
+            this.btnNord.TabIndex = 21;
+            this.btnNord.Text = "Nord-Ovest";
+            this.btnNord.UseVisualStyleBackColor = false;
+            // 
             // Form1
             // 
             this.AllowDrop = true;
@@ -321,7 +332,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.PaleGreen;
-            this.ClientSize = new System.Drawing.Size(1053, 494);
+            this.ClientSize = new System.Drawing.Size(1158, 494);
+            this.Controls.Add(this.btnNord);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.numericUpDownMaxProdFabb);
@@ -384,6 +396,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button btnNord;
     }
 }
 
