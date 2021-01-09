@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -268,28 +269,59 @@ namespace Ottimizzazione
 
                 case 1:
                     {
-                        
-                        dataGridViewNordOvest.DataSource = dataGridViewTabella.DataSource;
+                        // var dt = (dataGridViewTabella.DataSource as DataTable).Rows[0];
+
+                        //  DataTable TabellaNordOvest = (dataGridViewTabella.DataSource as DataTable).Copy();
+                        // TabellaNordOvest dt;
+                        // dataGridViewNordOvest.DataSource = TabellaNordOvest;
+
 
                         int costo_totale = 0;
                         //se produzione > fabbisogno ---> il fabbisogno verrà riempito completamente 
 
-                      
-                        
-                           
-                        
 
+
+
+
+                        foreach (DataGridViewColumn dgvcoloumn in dataGridViewTabella.Columns)
+                        {
+                            dataGridViewNordOvest.Columns.Add(dgvcoloumn.Clone() as DataGridViewColumn);
+                        }
+
+                        DataGridViewRow row = new DataGridViewRow();
+
+                        for (int i = 0; i < dataGridViewTabella.Rows.Count; i++)
+                        {
+                            row = (DataGridViewRow)dataGridViewTabella.Rows[i].Clone();
+                            int intColIndex = 0;
+                            foreach (DataGridViewCell cell in dataGridViewTabella.Rows[i].Cells)
+                            {
+                                row.Cells[intColIndex].Value = cell.Value;
+                                intColIndex++;
+                            }
+                            dataGridViewNordOvest.Rows.Add(row);
+                        }
+                        dataGridViewNordOvest.AllowUserToAddRows = false;
+                        dataGridViewNordOvest.RowHeadersVisible = false;
+                        dataGridViewNordOvest.Refresh();
+
+
+                        var a = Convert.ToInt32(dataGridViewNordOvest.Rows[0].Cells[dataGridViewNordOvest.ColumnCount - 1].Value);
+                        var b = Convert.ToInt32(dataGridViewNordOvest.Rows[dataGridViewNordOvest.Rows.Count - 1].Cells[1].Value);
+
+                        int j = 0;
                         do
-                        { 
-                           
+                        {
 
-                            if (Convert.ToInt32(dataGridViewNordOvest.Rows[0].Cells[dataGridViewNordOvest.ColumnCount - 1].Value) > Convert.ToInt32(dataGridViewNordOvest.Rows[dataGridViewNordOvest.Rows.Count -1 ].Cells[1].Value))
+
+
+                            if (Convert.ToInt32(dataGridViewNordOvest.Rows[0].Cells[dataGridViewNordOvest.ColumnCount - 1].Value) > Convert.ToInt32(dataGridViewNordOvest.Rows[dataGridViewNordOvest.Rows.Count - 1].Cells[1].Value))
                             {
                                 int differenza = Convert.ToInt32(dataGridViewNordOvest.Rows[0].Cells[dataGridViewNordOvest.ColumnCount - 1].Value) - Convert.ToInt32(dataGridViewNordOvest.Rows[dataGridViewNordOvest.Rows.Count - 1].Cells[1].Value);
 
                                 int costo_per_prodotto = Convert.ToInt32(dataGridViewNordOvest.Rows[0].Cells[1].Value);
 
-                                int costo_consegna = costo_per_prodotto * Convert.ToInt32(dataGridViewNordOvest.Rows[dataGridViewNordOvest.Rows.Count -1 ].Cells[1].Value);
+                                int costo_consegna = costo_per_prodotto * Convert.ToInt32(dataGridViewNordOvest.Rows[dataGridViewNordOvest.Rows.Count - 1].Cells[1].Value);
 
 
                                 costo_totale += costo_consegna;
@@ -305,22 +337,22 @@ namespace Ottimizzazione
                             {
                                 int costo_per_prodotto = Convert.ToInt32(dataGridViewNordOvest.Rows[0].Cells[1].Value);
 
-                                int costo_consegna = costo_per_prodotto * Convert.ToInt32(dataGridViewNordOvest.Rows[dataGridViewNordOvest.Rows.Count -1 ].Cells[1].Value);
+                                int costo_consegna = costo_per_prodotto * Convert.ToInt32(dataGridViewNordOvest.Rows[dataGridViewNordOvest.Rows.Count - 1].Cells[1].Value);
 
                                 costo_totale += costo_consegna;
 
 
-                               if(!(dataGridViewNordOvest.Rows.Count == 2 && dataGridViewNordOvest.Columns.Count == 1))
+                                if (!(dataGridViewNordOvest.Rows.Count == 2 && dataGridViewNordOvest.Columns.Count == 1))
                                 {
                                     dataGridViewNordOvest.Columns.RemoveAt(1);
 
                                     dataGridViewNordOvest.Rows.RemoveAt(0);
                                 }
-                                
+
                             }
                             else //minore
                             {
-                                int differenza = Math.Abs(Convert.ToInt32(dataGridViewNordOvest.Rows[0].Cells[dataGridViewNordOvest.ColumnCount - 1].Value) - Convert.ToInt32(dataGridViewNordOvest.Rows[dataGridViewNordOvest.Rows.Count -1].Cells[1].Value));
+                                int differenza = Math.Abs(Convert.ToInt32(dataGridViewNordOvest.Rows[0].Cells[dataGridViewNordOvest.ColumnCount - 1].Value) - Convert.ToInt32(dataGridViewNordOvest.Rows[dataGridViewNordOvest.Rows.Count - 1].Cells[1].Value));
 
                                 int costo_per_prodotto = Convert.ToInt32(dataGridViewNordOvest.Rows[0].Cells[1].Value);
 
@@ -331,12 +363,17 @@ namespace Ottimizzazione
                                 dataGridViewNordOvest.Rows[dataGridViewNordOvest.Rows.Count - 1].Cells[1].Value = differenza;
 
                                 dataGridViewNordOvest.Rows.RemoveAt(0);
+
                             }
+                            //j++;
+                            //dataGridViewNordOvest.Rows[dataGridViewNordOvest.RowCount - 1].Cells[dataGridViewNordOvest.ColumnCount - 1].Value = j;
+                            dataGridViewNordOvest.Refresh();
+                            Thread.Sleep(900);
 
-                        } while (dataGridViewNordOvest.Rows.Count == 1);
-                            //dataGridViewNordOvest.Rows[0].Cells[1].Value * dataGridViewNordOvest.Rows[0].Cells[data]
+                        } while (dataGridViewNordOvest.Rows.Count != 2);
+                        //dataGridViewNordOvest.Rows[0].Cells[1].Value * dataGridViewNordOvest.Rows[0].Cells[data]
 
-                            break;
+                        break;
                     }
             }
         }
