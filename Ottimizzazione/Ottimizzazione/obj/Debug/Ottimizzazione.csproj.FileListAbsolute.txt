@@ -47,3 +47,4 @@ C:\Users\andry\Source\Repos\BolisLuca\GEP\Ottimizzazione\Ottimizzazione\obj\Debu
 C:\Users\andry\Source\Repos\BolisLuca\GEP\Ottimizzazione\Ottimizzazione\obj\Debug\Ottimizzazione.csproj.CoreCompileInputs.cache
 C:\Users\andry\Source\Repos\BolisLuca\GEP\Ottimizzazione\Ottimizzazione\obj\Debug\Ottimizzazione.exe
 C:\Users\andry\Source\Repos\BolisLuca\GEP\Ottimizzazione\Ottimizzazione\obj\Debug\Ottimizzazione.pdb
+C:\Users\med19\Source\Repos\BolisLuca\GEP\Ottimizzazione\Ottimizzazione\obj\Debug\Ottimizzazione.Form2.resources

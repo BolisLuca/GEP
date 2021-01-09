@@ -19,6 +19,8 @@ namespace Ottimizzazione
             InitializeComponent();
         }
 
+        Form form2;
+
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -311,13 +313,15 @@ namespace Ottimizzazione
 
                         int j = 0;
 
-                        
+
                         do
                         {
 
                             if (j == 0)
                             {
                                 Thread.Sleep(500);
+                                form2 = new Form2();
+                                form2.Show();
                             }
 
                             //produzione > fabbisogno 
@@ -343,9 +347,12 @@ namespace Ottimizzazione
 
                                 dataGridViewNordOvest.Columns[1].DefaultCellStyle.BackColor = Color.Yellow;
 
+                                string step = "Da" + dataGridViewNordOvest.Rows[0].Cells[0].Value.ToString() + " a " + dataGridViewNordOvest.Columns[0].ToString() + " : " + fabbisogno.ToString() + " unità a " + costo_per_prodotto.ToString() + "€ = " + costo_consegna.ToString();
 
+                                
 
-                               
+                                Form2.acquisisci(step);
+
                                 dataGridViewNordOvest.Refresh();
 
                                 Thread.Sleep(5000);
@@ -415,10 +422,12 @@ namespace Ottimizzazione
                             j++;
                         } while (dataGridViewNordOvest.Rows.Count != 2);
                         //dataGridViewNordOvest.Rows[0].Cells[1].Value * dataGridViewNordOvest.Rows[0].Cells[data]
-
+                        form2.Close();
                         break;
                     }
             }
         }
+
+       
     }
 }
