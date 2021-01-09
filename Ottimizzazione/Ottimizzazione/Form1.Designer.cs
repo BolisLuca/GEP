@@ -51,8 +51,8 @@
             this.label12 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridViewTabella = new System.Windows.Forms.DataGridView();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridViewNordOvest = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownProduttori)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownConsumatori)).BeginInit();
@@ -62,8 +62,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinProdFabb)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTabella)).BeginInit();
+            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNordOvest)).BeginInit();
             this.SuspendLayout();
             // 
@@ -169,6 +169,11 @@
             this.numericUpDownMaxCosti.Size = new System.Drawing.Size(120, 22);
             this.numericUpDownMaxCosti.TabIndex = 10;
             this.numericUpDownMaxCosti.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericUpDownMaxCosti.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             // 
             // numericUpDownMinCosti
             // 
@@ -183,6 +188,11 @@
             this.numericUpDownMinCosti.Size = new System.Drawing.Size(120, 22);
             this.numericUpDownMinCosti.TabIndex = 9;
             this.numericUpDownMinCosti.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericUpDownMinCosti.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label5
             // 
@@ -246,6 +256,11 @@
             this.numericUpDownMaxProdFabb.Size = new System.Drawing.Size(120, 22);
             this.numericUpDownMaxProdFabb.TabIndex = 18;
             this.numericUpDownMaxProdFabb.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericUpDownMaxProdFabb.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             // 
             // numericUpDownMinProdFabb
             // 
@@ -260,6 +275,11 @@
             this.numericUpDownMinProdFabb.Size = new System.Drawing.Size(120, 22);
             this.numericUpDownMinProdFabb.TabIndex = 17;
             this.numericUpDownMinProdFabb.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericUpDownMinProdFabb.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label9
             // 
@@ -319,17 +339,6 @@
             this.tabPage1.Text = "Matrice Iniziale";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.dataGridViewNordOvest);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1192, 354);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Nord - Ovest";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
             // dataGridViewTabella
             // 
             this.dataGridViewTabella.AllowUserToAddRows = false;
@@ -343,7 +352,7 @@
             this.dataGridViewTabella.BackgroundColor = System.Drawing.Color.PaleGreen;
             this.dataGridViewTabella.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewTabella.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewTabella.Location = new System.Drawing.Point(0, 2);
+            this.dataGridViewTabella.Location = new System.Drawing.Point(3, 2);
             this.dataGridViewTabella.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewTabella.Name = "dataGridViewTabella";
             this.dataGridViewTabella.RowHeadersWidth = 51;
@@ -351,6 +360,17 @@
             this.dataGridViewTabella.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridViewTabella.Size = new System.Drawing.Size(1190, 350);
             this.dataGridViewTabella.TabIndex = 2;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.dataGridViewNordOvest);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1192, 354);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Nord - Ovest";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // dataGridViewNordOvest
             // 
@@ -417,8 +437,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinProdFabb)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTabella)).EndInit();
+            this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNordOvest)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

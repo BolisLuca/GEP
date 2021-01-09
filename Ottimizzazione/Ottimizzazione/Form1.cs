@@ -277,20 +277,23 @@ namespace Ottimizzazione
 
 
                         int costo_totale = 0;
+
                         //se produzione > fabbisogno ---> il fabbisogno verrà riempito completamente 
 
 
+                        dataGridViewNordOvest.Rows.Clear();
+                        dataGridViewNordOvest.Columns.Clear();
 
 
 
-                        foreach (DataGridViewColumn dgvcoloumn in dataGridViewTabella.Columns)
+                        foreach (DataGridViewColumn dgvcoloumn in dataGridViewTabella.Columns) //clona la struttura
                         {
                             dataGridViewNordOvest.Columns.Add(dgvcoloumn.Clone() as DataGridViewColumn);
                         }
 
                         DataGridViewRow row = new DataGridViewRow();
 
-                        for (int i = 0; i < dataGridViewTabella.Rows.Count; i++)
+                        for (int i = 0; i < dataGridViewTabella.Rows.Count; i++) //inserisco i vaalori delle righe
                         {
                             row = (DataGridViewRow)dataGridViewTabella.Rows[i].Clone();
                             int intColIndex = 0;
@@ -306,14 +309,16 @@ namespace Ottimizzazione
                         dataGridViewNordOvest.Refresh();
 
 
-                        var a = Convert.ToInt32(dataGridViewNordOvest.Rows[0].Cells[dataGridViewNordOvest.ColumnCount - 1].Value);
-                        var b = Convert.ToInt32(dataGridViewNordOvest.Rows[dataGridViewNordOvest.Rows.Count - 1].Cells[1].Value);
-
                         int j = 0;
+
+                        
                         do
                         {
 
-
+                            if (j == 0)
+                            {
+                                Thread.Sleep(500);
+                            }
 
                             if (Convert.ToInt32(dataGridViewNordOvest.Rows[0].Cells[dataGridViewNordOvest.ColumnCount - 1].Value) > Convert.ToInt32(dataGridViewNordOvest.Rows[dataGridViewNordOvest.Rows.Count - 1].Cells[1].Value))
                             {
@@ -328,9 +333,15 @@ namespace Ottimizzazione
 
                                 dataGridViewNordOvest.Rows[0].Cells[dataGridViewNordOvest.ColumnCount - 1].Value = differenza;
 
+                                dataGridViewNordOvest.Columns[1].DefaultCellStyle.BackColor = Color.Yellow;
+
+                                dataGridViewNordOvest.Refresh();
+
+                                Thread.Sleep(2000);
+
                                 dataGridViewNordOvest.Columns.RemoveAt(1);
 
-
+                               
 
                             }
                             else if (Convert.ToInt32(dataGridViewNordOvest.Rows[0].Cells[dataGridViewNordOvest.ColumnCount - 1].Value) == Convert.ToInt32(dataGridViewNordOvest.Rows[dataGridViewNordOvest.Rows.Count - 1].Cells[1].Value))
@@ -344,6 +355,8 @@ namespace Ottimizzazione
 
                                 if (!(dataGridViewNordOvest.Rows.Count == 2 && dataGridViewNordOvest.Columns.Count == 1))
                                 {
+                                    Thread.Sleep(2000);
+
                                     dataGridViewNordOvest.Columns.RemoveAt(1);
 
                                     dataGridViewNordOvest.Rows.RemoveAt(0);
@@ -362,14 +375,16 @@ namespace Ottimizzazione
 
                                 dataGridViewNordOvest.Rows[dataGridViewNordOvest.Rows.Count - 1].Cells[1].Value = differenza;
 
+                                Thread.Sleep(2000);
+
                                 dataGridViewNordOvest.Rows.RemoveAt(0);
 
                             }
-                            //j++;
-                            //dataGridViewNordOvest.Rows[dataGridViewNordOvest.RowCount - 1].Cells[dataGridViewNordOvest.ColumnCount - 1].Value = j;
-                            dataGridViewNordOvest.Refresh();
-                            Thread.Sleep(900);
 
+                            
+
+                            dataGridViewNordOvest.Refresh();
+                            j++;
                         } while (dataGridViewNordOvest.Rows.Count != 2);
                         //dataGridViewNordOvest.Rows[0].Cells[1].Value * dataGridViewNordOvest.Rows[0].Cells[data]
 
