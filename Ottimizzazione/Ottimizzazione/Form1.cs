@@ -320,70 +320,98 @@ namespace Ottimizzazione
                                 Thread.Sleep(500);
                             }
 
-                            if (Convert.ToInt32(dataGridViewNordOvest.Rows[0].Cells[dataGridViewNordOvest.ColumnCount - 1].Value) > Convert.ToInt32(dataGridViewNordOvest.Rows[dataGridViewNordOvest.Rows.Count - 1].Cells[1].Value))
+                            //produzione > fabbisogno 
+
+                            var produzione = Convert.ToInt32(dataGridViewNordOvest.Rows[0].Cells[dataGridViewNordOvest.ColumnCount - 1].Value);
+
+                            var fabbisogno = Convert.ToInt32(dataGridViewNordOvest.Rows[dataGridViewNordOvest.Rows.Count - 1].Cells[1].Value);
+
+                            if (produzione > fabbisogno)
                             {
-                                int differenza = Convert.ToInt32(dataGridViewNordOvest.Rows[0].Cells[dataGridViewNordOvest.ColumnCount - 1].Value) - Convert.ToInt32(dataGridViewNordOvest.Rows[dataGridViewNordOvest.Rows.Count - 1].Cells[1].Value);
+                                int differenza = produzione - fabbisogno;
+
+                                dataGridViewNordOvest.Rows[0].Cells[1].Style.ForeColor = Color.Red;
 
                                 int costo_per_prodotto = Convert.ToInt32(dataGridViewNordOvest.Rows[0].Cells[1].Value);
 
-                                int costo_consegna = costo_per_prodotto * Convert.ToInt32(dataGridViewNordOvest.Rows[dataGridViewNordOvest.Rows.Count - 1].Cells[1].Value);
+                                int costo_consegna = costo_per_prodotto * fabbisogno;
 
 
                                 costo_totale += costo_consegna;
-
-                                dataGridViewNordOvest.Rows[0].Cells[dataGridViewNordOvest.ColumnCount - 1].Value = differenza;
-
-                                dataGridViewNordOvest.Columns[1].DefaultCellStyle.BackColor = Color.Yellow;
-
-                                dataGridViewNordOvest.Refresh();
-
-                                Thread.Sleep(2000);
-
-                                dataGridViewNordOvest.Columns.RemoveAt(1);
 
                                
 
+                                dataGridViewNordOvest.Columns[1].DefaultCellStyle.BackColor = Color.Yellow;
+
+
+
+                               
+                                dataGridViewNordOvest.Refresh();
+
+                                Thread.Sleep(5000);
+
+                                dataGridViewNordOvest.Rows[0].Cells[dataGridViewNordOvest.ColumnCount - 1].Value = differenza;
+
+                                dataGridViewNordOvest.Columns.RemoveAt(1);
+
+                                
+                                dataGridViewNordOvest.Refresh();
+
                             }
-                            else if (Convert.ToInt32(dataGridViewNordOvest.Rows[0].Cells[dataGridViewNordOvest.ColumnCount - 1].Value) == Convert.ToInt32(dataGridViewNordOvest.Rows[dataGridViewNordOvest.Rows.Count - 1].Cells[1].Value))
+                            else
                             {
-                                int costo_per_prodotto = Convert.ToInt32(dataGridViewNordOvest.Rows[0].Cells[1].Value);
-
-                                int costo_consegna = costo_per_prodotto * Convert.ToInt32(dataGridViewNordOvest.Rows[dataGridViewNordOvest.Rows.Count - 1].Cells[1].Value);
-
-                                costo_totale += costo_consegna;
-
-
-                                if (!(dataGridViewNordOvest.Rows.Count == 2 && dataGridViewNordOvest.Columns.Count == 1))
+                                if (produzione == fabbisogno)
                                 {
-                                    Thread.Sleep(2000);
+                                    int costo_per_prodotto = Convert.ToInt32(dataGridViewNordOvest.Rows[0].Cells[1].Value);
+
+                                    int costo_consegna = costo_per_prodotto * Convert.ToInt32(dataGridViewNordOvest.Rows[dataGridViewNordOvest.Rows.Count - 1].Cells[1].Value);
+
+                                    costo_totale += costo_consegna;
+
+                                    dataGridViewNordOvest.Columns[1].DefaultCellStyle.BackColor = Color.Yellow;
+                                    dataGridViewNordOvest.Rows[0].DefaultCellStyle.BackColor = Color.Yellow;
+
+                                    dataGridViewNordOvest.Refresh();
+
+                                    Thread.Sleep(5000);
+
 
                                     dataGridViewNordOvest.Columns.RemoveAt(1);
 
+                                        dataGridViewNordOvest.Rows.RemoveAt(0);
+
+                                    dataGridViewNordOvest.Refresh();
+                                }
+                                else //produzione minore fabbisogno 7 9
+                                {
+                                    int differenza = fabbisogno - produzione;
+
+                                    int costo_per_prodotto = Convert.ToInt32(dataGridViewNordOvest.Rows[0].Cells[1].Value);
+
+                                    int costo_consegna = costo_per_prodotto * Convert.ToInt32(dataGridViewNordOvest.Rows[dataGridViewNordOvest.RowCount - 1].Cells[1].Value);
+
+                                    costo_totale += costo_consegna;
+
+                                    dataGridViewNordOvest.Rows[0].DefaultCellStyle.BackColor = Color.Yellow;
+                                    dataGridViewNordOvest.Refresh();
+
+
+                                    Thread.Sleep(5000);
+
+                                    dataGridViewNordOvest.Rows[dataGridViewNordOvest.Rows.Count - 1].Cells[1].Value = differenza;
+
+                                 
                                     dataGridViewNordOvest.Rows.RemoveAt(0);
+
+                                 
+                                    dataGridViewNordOvest.Refresh();
+
                                 }
 
                             }
-                            else //minore
-                            {
-                                int differenza = Math.Abs(Convert.ToInt32(dataGridViewNordOvest.Rows[0].Cells[dataGridViewNordOvest.ColumnCount - 1].Value) - Convert.ToInt32(dataGridViewNordOvest.Rows[dataGridViewNordOvest.Rows.Count - 1].Cells[1].Value));
 
-                                int costo_per_prodotto = Convert.ToInt32(dataGridViewNordOvest.Rows[0].Cells[1].Value);
-
-                                int costo_consegna = costo_per_prodotto * Convert.ToInt32(dataGridViewNordOvest.Rows[0].Cells[dataGridViewNordOvest.ColumnCount - 1].Value);
-
-                                costo_totale += costo_consegna;
-
-                                dataGridViewNordOvest.Rows[dataGridViewNordOvest.Rows.Count - 1].Cells[1].Value = differenza;
-
-                                Thread.Sleep(2000);
-
-                                dataGridViewNordOvest.Rows.RemoveAt(0);
-
-                            }
 
                             
-
-                            dataGridViewNordOvest.Refresh();
                             j++;
                         } while (dataGridViewNordOvest.Rows.Count != 2);
                         //dataGridViewNordOvest.Rows[0].Cells[1].Value * dataGridViewNordOvest.Rows[0].Cells[data]

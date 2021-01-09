@@ -170,7 +170,7 @@
             this.numericUpDownMaxCosti.TabIndex = 10;
             this.numericUpDownMaxCosti.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDownMaxCosti.Value = new decimal(new int[] {
-            10,
+            15,
             0,
             0,
             0});
@@ -257,7 +257,7 @@
             this.numericUpDownMaxProdFabb.TabIndex = 18;
             this.numericUpDownMaxProdFabb.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDownMaxProdFabb.Value = new decimal(new int[] {
-            10,
+            15,
             0,
             0,
             0});
