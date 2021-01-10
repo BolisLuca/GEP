@@ -324,6 +324,7 @@ namespace Ottimizzazione
                                 form2.Show();
                             }
 
+                            Form2.acquisisci("      METODO   NORD-OVEST      ");
                             //produzione > fabbisogno 
 
                             var produzione = Convert.ToInt32(dataGridViewNordOvest.Rows[0].Cells[dataGridViewNordOvest.ColumnCount - 1].Value);
@@ -347,7 +348,7 @@ namespace Ottimizzazione
 
                                 dataGridViewNordOvest.Columns[1].DefaultCellStyle.BackColor = Color.Yellow;
 
-                                string step = "Da" + dataGridViewNordOvest.Rows[0].Cells[0].Value.ToString() + " a " + dataGridViewNordOvest.Columns[0].ToString() + " : " + fabbisogno.ToString() + " unità a " + costo_per_prodotto.ToString() + "€ = " + costo_consegna.ToString();
+                                string step = "Da" + dataGridViewNordOvest.Rows[0].Cells[0].Value.ToString() + " a " + dataGridViewNordOvest.Columns[1].HeaderText.ToString() + " : " + fabbisogno.ToString() + " unità a " + costo_per_prodotto.ToString() + "€ = " + costo_consegna.ToString();
 
                                 
 
