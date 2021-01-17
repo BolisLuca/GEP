@@ -266,6 +266,13 @@ namespace Ottimizzazione
 
                 case 1:
                     {
+                        if (dataGridViewTabella.DataSource == null)
+                        {
+                            MessageBox.Show("Devi prima creare la tabella iniziale", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            tabControl1.SelectedIndex = 0;
+                            return;
+                            
+                        }
                         // var dt = (dataGridViewTabella.DataSource as DataTable).Rows[0];
 
                         //  DataTable TabellaNordOvest = (dataGridViewTabella.DataSource as DataTable).Copy();
@@ -447,6 +454,13 @@ namespace Ottimizzazione
 
                 case 2:
                     {
+                        if (dataGridViewTabella.DataSource == null)
+                        {
+                            MessageBox.Show("Devi prima creare la tabella iniziale", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            tabControl1.SelectedIndex = 0;
+                            return;
+
+                        }
                         int costo_totale = 0;
 
                         //se produzione > fabbisogno ---> il fabbisogno verrà riempito completamente 
