@@ -1,18 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace Ottimizzazione
 {
     public partial class Form2 : Form
     {
-        
+
         private static Label myLabel;
         public Form2()
         {
@@ -21,12 +13,12 @@ namespace Ottimizzazione
             myLabel = label1;
         }
         public static void acquisisci(string passaggio)
-        { 
+        {
             myLabel.Text += passaggio + "\n";
-        //    myLabel.Invalidate();
+            //    myLabel.Invalidate();
             myLabel.Update();
-        //    myLabel.Refresh();
-          //  Application.DoEvents();
+            //    myLabel.Refresh();
+            //  Application.DoEvents();
         }
 
     }

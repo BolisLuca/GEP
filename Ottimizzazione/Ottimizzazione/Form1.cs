@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Ottimizzazione
@@ -223,7 +217,7 @@ namespace Ottimizzazione
                     }
 
 
-
+                    
                     dataGridViewTabella.Rows[dataGridViewTabella.RowCount - 1].Cells[i].Value = val;
                     totale -= val;
                 }
@@ -358,7 +352,7 @@ namespace Ottimizzazione
 
                                 dataGridViewNordOvest.Refresh();
 
-                                Thread.Sleep(1000);
+                                Thread.Sleep(5000);
 
                                 dataGridViewNordOvest.Rows[0].Cells[dataGridViewNordOvest.ColumnCount - 1].Value = differenza;
 
@@ -374,7 +368,7 @@ namespace Ottimizzazione
                                 {
                                     int costo_per_prodotto = Convert.ToInt32(dataGridViewNordOvest.Rows[0].Cells[1].Value);
 
-                                    int costo_consegna = costo_per_prodotto * Convert.ToInt32(dataGridViewNordOvest.Rows[dataGridViewNordOvest.Rows.Count - 1].Cells[1].Value);
+                                    int costo_consegna = costo_per_prodotto * fabbisogno;
 
                                     costo_totale += costo_consegna;
 
@@ -383,7 +377,7 @@ namespace Ottimizzazione
 
                                     dataGridViewNordOvest.Refresh();
 
-                                    Thread.Sleep(1000);
+                                    Thread.Sleep(5000);
 
 
                                     dataGridViewNordOvest.Columns.RemoveAt(1);
@@ -402,7 +396,7 @@ namespace Ottimizzazione
 
                                     int costo_per_prodotto = Convert.ToInt32(dataGridViewNordOvest.Rows[0].Cells[1].Value);
 
-                                    int costo_consegna = costo_per_prodotto * Convert.ToInt32(dataGridViewNordOvest.Rows[dataGridViewNordOvest.RowCount - 1].Cells[1].Value);
+                                    int costo_consegna = costo_per_prodotto * produzione;
 
                                     costo_totale += costo_consegna;
 
@@ -410,11 +404,11 @@ namespace Ottimizzazione
                                     dataGridViewNordOvest.Refresh();
 
 
-                                    Thread.Sleep(1000);
+                                    Thread.Sleep(5000);
 
                                     dataGridViewNordOvest.Rows[dataGridViewNordOvest.Rows.Count - 1].Cells[1].Value = differenza;
 
-                                    string step = "Da" + dataGridViewNordOvest.Rows[0].Cells[0].Value.ToString() + " a " + dataGridViewNordOvest.Columns[1].HeaderText.ToString() + " : " + fabbisogno.ToString() + " unità a " + costo_per_prodotto.ToString() + "€ = " + costo_consegna.ToString();
+                                    string step = "Da" + dataGridViewNordOvest.Rows[0].Cells[0].Value.ToString() + " a " + dataGridViewNordOvest.Columns[1].HeaderText.ToString() + " : " + produzione.ToString() + " unità a " + costo_per_prodotto.ToString() + "€ = " + costo_consegna.ToString();
                                     Form2.acquisisci(step);
 
                                     dataGridViewNordOvest.Rows.RemoveAt(0);
@@ -471,7 +465,7 @@ namespace Ottimizzazione
 
 
                         int k = 0;
-                        
+
                         int min = 0;
                         int yposizionemin = 0;
                         int xposizionemin = 0;
@@ -488,186 +482,199 @@ namespace Ottimizzazione
                                 Form2.acquisisci("      METODO  MINIMI COSTI   \n\n");
                             }
 
-                           
 
 
-                        for (int i=0; i<dataGridViewTabella.RowCount -1; i++)
-                        {
-                            for(int j=1; j<dataGridViewTabella.ColumnCount -1; j++)
+
+                            for (int i = 0; i < dataGridViewTabella.Rows.Count - 1; i++)
                             {
-                                if( i == 0 && j == 1)
+                                for (int j = 1; j < dataGridViewTabella.Columns.Count - 1; j++)
                                 {
-                                    min = Convert.ToInt32(dataGridViewMinimiCosti.Rows[0].Cells[1].Value);
-                                    yposizionemin = 0;
-                                    xposizionemin = 1;
-                                }
-
-                                if(Convert.ToInt32(dataGridViewTabella.Rows[i].Cells[j].Value) < min)
-                                {
-                                    min = Convert.ToInt32(dataGridViewTabella.Rows[i].Cells[j].Value);
-                                    yposizionemin = i;
-                                    xposizionemin = j;
-                                }
-                                else
-                                {
-                                    if(Convert.ToInt32(dataGridViewTabella.Rows[i].Cells[j].Value) == min)
+                                    if (i == 0 && j == 1)
                                     {
-                                        int nprodotti;
+                                        min = Convert.ToInt32(dataGridViewMinimiCosti.Rows[0].Cells[1].Value);
+                                        yposizionemin = 0;
+                                        xposizionemin = 1;
                                         
-                                        int produzioneAttuale = Convert.ToInt32(dataGridViewTabella.Rows[i].Cells[dataGridViewTabella.ColumnCount -1 ].Value);
-                                        int fabbisognoAttuale = Convert.ToInt32(dataGridViewTabella.Rows[dataGridViewTabella.RowCount-1].Cells[j].Value);
+                                    }
+                                    else
+                                    {
 
-                                        if (produzioneAttuale> fabbisognoAttuale)
-                                        {
-                                            nprodotti = fabbisognoAttuale;
-                                        }
-                                        else
-                                        {
-                                            if(produzioneAttuale < fabbisognoAttuale)
-                                            {
-                                                nprodotti = produzioneAttuale;
-                                            }
-                                            else
-                                            {
-                                                nprodotti = fabbisognoAttuale;
-                                            }
-                                        }
-                                        int nprodottimin = 0;
-                                        int produzioneMin = Convert.ToInt32(dataGridViewTabella.Rows[yposizionemin].Cells[xposizionemin].Value);
-                                        int fabbisognoMin = Convert.ToInt32(dataGridViewTabella.Rows[yposizionemin].Cells[xposizionemin].Value);
-                                        if (produzioneMin > fabbisognoMin)
-                                        {
-                                            nprodottimin = fabbisognoMin;
-                                        }
-                                        else
-                                        {
-                                            if (produzioneMin < fabbisognoMin)
-                                            {
-                                                nprodottimin = produzioneMin;
-                                            }
-                                            else
-                                            {
-                                                nprodottimin = fabbisognoMin;
-                                            }
-                                        }
 
-                                        if(nprodottimin < nprodotti)
+                                        var val = Convert.ToInt32(dataGridViewTabella.Rows[i].Cells[j].Value);
+                                        if (min.CompareTo(val)>0)
                                         {
+                                            min = Convert.ToInt32(dataGridViewTabella.Rows[i].Cells[j].Value);
                                             yposizionemin = i;
                                             xposizionemin = j;
+                                        }
+                                        else
+                                        {
+                                            if (Convert.ToInt32(dataGridViewTabella.Rows[i].Cells[j].Value) == min)
+                                            {
+                                                int nprodotti;
+
+                                                int produzioneAttuale = Convert.ToInt32(dataGridViewTabella.Rows[i].Cells[dataGridViewTabella.ColumnCount - 1].Value);
+                                                int fabbisognoAttuale = Convert.ToInt32(dataGridViewTabella.Rows[dataGridViewTabella.RowCount - 1].Cells[j].Value);
+
+                                                if (produzioneAttuale > fabbisognoAttuale)
+                                                {
+                                                    nprodotti = fabbisognoAttuale;
+                                                }
+                                                else
+                                                {
+                                                    if (produzioneAttuale < fabbisognoAttuale)
+                                                    {
+                                                        nprodotti = produzioneAttuale;
+                                                    }
+                                                    else
+                                                    {
+                                                        nprodotti = fabbisognoAttuale;
+                                                    }
+                                                }
+                                                int nprodottimin = 0;
+                                                int produzioneMin = Convert.ToInt32(dataGridViewTabella.Rows[yposizionemin].Cells[xposizionemin].Value);
+                                                int fabbisognoMin = Convert.ToInt32(dataGridViewTabella.Rows[yposizionemin].Cells[xposizionemin].Value);
+                                                if (produzioneMin > fabbisognoMin)
+                                                {
+                                                    nprodottimin = fabbisognoMin;
+                                                }
+                                                else
+                                                {
+                                                    if (produzioneMin < fabbisognoMin)
+                                                    {
+                                                        nprodottimin = produzioneMin;
+                                                    }
+                                                    else
+                                                    {
+                                                        nprodottimin = fabbisognoMin;
+                                                    }
+                                                }
+
+                                                if (nprodotti < nprodottimin)
+                                                {
+                                                    yposizionemin = i;
+                                                    xposizionemin = j;
+                                                }
+                                            }
                                         }
                                     }
                                 }
                             }
-                        }
 
-                        //
+                            //
 
-                        
 
-                        var produzione = Convert.ToInt32(dataGridViewMinimiCosti.Rows[yposizionemin].Cells[xposizionemin].Value);
 
-                        var fabbisogno = Convert.ToInt32(dataGridViewMinimiCosti.Rows[yposizionemin].Cells[xposizionemin].Value);
+                            var produzione = Convert.ToInt32(dataGridViewMinimiCosti.Rows[yposizionemin].Cells[dataGridViewMinimiCosti.ColumnCount - 1].Value);
 
-                        if (produzione > fabbisogno)
-                        {
-                            int differenza = produzione - fabbisogno;
+                            var fabbisogno = Convert.ToInt32(dataGridViewMinimiCosti.Rows[dataGridViewMinimiCosti.RowCount - 1].Cells[xposizionemin].Value);
 
                             dataGridViewMinimiCosti.Rows[yposizionemin].Cells[xposizionemin].Style.ForeColor = Color.Red;
-
-                            int costo_per_prodotto = Convert.ToInt32(dataGridViewMinimiCosti.Rows[yposizionemin].Cells[xposizionemin].Value);
-
-                            int costo_consegna = costo_per_prodotto * fabbisogno;
-
-
-                            costo_totale += costo_consegna;
-
-
-
-                            dataGridViewMinimiCosti.Columns[xposizionemin].DefaultCellStyle.BackColor = Color.Yellow;
-
-                            string step = "Da" + dataGridViewMinimiCosti.Rows[0].Cells[0].Value.ToString() + " a " + dataGridViewMinimiCosti.Columns[1].HeaderText.ToString() + " : " + fabbisogno.ToString() + " unità a " + costo_per_prodotto.ToString() + "€ = " + costo_consegna.ToString();
-
-
-
-                            Form2.acquisisci(step);
-
                             dataGridViewMinimiCosti.Refresh();
 
-                            Thread.Sleep(1000);
-
-                            dataGridViewMinimiCosti.Rows[0].Cells[dataGridViewMinimiCosti.ColumnCount - 1].Value = differenza;
-
-                            dataGridViewMinimiCosti.Columns.RemoveAt(1);
-
-
-                            dataGridViewMinimiCosti.Refresh();
-
-                        }
-                        else
-                        {
-                            if (produzione == fabbisogno)
+                            if (produzione > fabbisogno)
                             {
+                                int differenza = produzione - fabbisogno;
+
+
+
                                 int costo_per_prodotto = Convert.ToInt32(dataGridViewMinimiCosti.Rows[yposizionemin].Cells[xposizionemin].Value);
 
                                 int costo_consegna = costo_per_prodotto * fabbisogno;
 
+
                                 costo_totale += costo_consegna;
+
+
 
                                 dataGridViewMinimiCosti.Columns[xposizionemin].DefaultCellStyle.BackColor = Color.Yellow;
-                                dataGridViewMinimiCosti.Rows[yposizionemin].DefaultCellStyle.BackColor = Color.Yellow;
 
-                                dataGridViewMinimiCosti.Refresh();
-
-                                Thread.Sleep(1000);
+                                string step = "Da" + dataGridViewMinimiCosti.Rows[yposizionemin].Cells[0].Value.ToString() + " a " + dataGridViewMinimiCosti.Columns[xposizionemin].HeaderText.ToString() + " : " + fabbisogno.ToString() + " unità a " + costo_per_prodotto.ToString() + "€ = " + costo_consegna.ToString();
 
 
-                                dataGridViewMinimiCosti.Columns.RemoveAt(1);
 
-                                dataGridViewMinimiCosti.Rows.RemoveAt(0);
-
-
-                                string step = "Da" + dataGridViewMinimiCosti.Rows[0].Cells[0].Value.ToString() + " a " + dataGridViewMinimiCosti.Columns[1].HeaderText.ToString() + " : " + fabbisogno.ToString() + " unità a " + costo_per_prodotto.ToString() + "€ = " + costo_consegna.ToString();
                                 Form2.acquisisci(step);
 
                                 dataGridViewMinimiCosti.Refresh();
+
+                                Thread.Sleep(5000);
+
+                                dataGridViewMinimiCosti.Rows[yposizionemin].Cells[dataGridViewMinimiCosti.ColumnCount - 1].Value = differenza;
+                               
+                                
+                                dataGridViewMinimiCosti.Columns.RemoveAt(xposizionemin);
+
+
+                                dataGridViewMinimiCosti.Update();
+                                dataGridViewMinimiCosti.Refresh();
+
                             }
-                            else //produzione minore fabbisogno 7 9
+                            else
                             {
-                                int differenza = fabbisogno - produzione;
+                                if (produzione == fabbisogno)
+                                {
+                                    int costo_per_prodotto = Convert.ToInt32(dataGridViewMinimiCosti.Rows[yposizionemin].Cells[xposizionemin].Value);
 
-                                int costo_per_prodotto = Convert.ToInt32(dataGridViewMinimiCosti.Rows[yposizionemin].Cells[xposizionemin].Value);
+                                    int costo_consegna = costo_per_prodotto * fabbisogno;
 
-                                int costo_consegna = costo_per_prodotto * fabbisogno;
+                                    costo_totale += costo_consegna;
 
-                                costo_totale += costo_consegna;
+                                    dataGridViewMinimiCosti.Columns[xposizionemin].DefaultCellStyle.BackColor = Color.Yellow;
+                                    dataGridViewMinimiCosti.Rows[yposizionemin].DefaultCellStyle.BackColor = Color.Yellow;
 
-                                dataGridViewMinimiCosti.Rows[yposizionemin].DefaultCellStyle.BackColor = Color.Yellow;
-                                dataGridViewMinimiCosti.Refresh();
+                                    dataGridViewMinimiCosti.Refresh();
 
-
-                                Thread.Sleep(1000);
-
-                                dataGridViewMinimiCosti.Rows[dataGridViewMinimiCosti.Rows.Count - 1].Cells[1].Value = differenza;
-
-                                string step = "Da" + dataGridViewMinimiCosti.Rows[0].Cells[0].Value.ToString() + " a " + dataGridViewMinimiCosti.Columns[1].HeaderText.ToString() + " : " + fabbisogno.ToString() + " unità a " + costo_per_prodotto.ToString() + "€ = " + costo_consegna.ToString();
-                                Form2.acquisisci(step);
-
-                                dataGridViewMinimiCosti.Rows.RemoveAt(0);
+                                    Thread.Sleep(5000);
 
 
-                                dataGridViewMinimiCosti.Refresh();
+                                    dataGridViewMinimiCosti.Columns.RemoveAt(xposizionemin);
+
+                                    dataGridViewMinimiCosti.Rows.RemoveAt(yposizionemin);
+
+                                    dataGridViewMinimiCosti.Update();
+                                    dataGridViewMinimiCosti.Refresh();
+
+                                    string step = "Da" + dataGridViewMinimiCosti.Rows[yposizionemin].Cells[0].Value.ToString() + " a " + dataGridViewMinimiCosti.Columns[xposizionemin].HeaderText.ToString() + " : " + fabbisogno.ToString() + " unità a " + costo_per_prodotto.ToString() + "€ = " + costo_consegna.ToString();
+                                    Form2.acquisisci(step);
+
+                                    
+                                }
+                                else //produzione minore fabbisogno 7 9
+                                {
+                                    int differenza = fabbisogno - produzione;
+
+                                    int costo_per_prodotto = Convert.ToInt32(dataGridViewMinimiCosti.Rows[yposizionemin].Cells[xposizionemin].Value);
+
+                                    int costo_consegna = costo_per_prodotto * fabbisogno;
+
+                                    costo_totale += costo_consegna;
+
+                                    dataGridViewMinimiCosti.Rows[yposizionemin].DefaultCellStyle.BackColor = Color.Yellow;
+                                    dataGridViewMinimiCosti.Refresh();
+
+
+                                    Thread.Sleep(5000);
+
+                                    dataGridViewMinimiCosti.Rows[dataGridViewMinimiCosti.Rows.Count - 1].Cells[1].Value = differenza;
+
+                                    string step = "Da" + dataGridViewMinimiCosti.Rows[yposizionemin].Cells[0].Value.ToString() + " a " + dataGridViewMinimiCosti.Columns[xposizionemin].HeaderText.ToString() + " : " + fabbisogno.ToString() + " unità a " + costo_per_prodotto.ToString() + "€ = " + costo_consegna.ToString();
+                                    Form2.acquisisci(step);
+
+                                    dataGridViewMinimiCosti.Rows.RemoveAt(yposizionemin);
+
+                                    dataGridViewMinimiCosti.Update();
+                                    dataGridViewMinimiCosti.Refresh();
+
+                                }
 
                             }
 
-                        }
 
 
-
-                        k++;
-                    } while (dataGridViewMinimiCosti.Rows.Count != 2) ;
-                    //
-                    break;
+                            k++;
+                        } while (dataGridViewMinimiCosti.Rows.Count != 2);
+                        //
+                        break;
                     }
             }
 
