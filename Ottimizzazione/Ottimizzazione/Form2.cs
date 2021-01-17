@@ -14,7 +14,7 @@ namespace Ottimizzazione
         }
         public static void acquisisci(string passaggio)
         {
-            myLabel.Text += passaggio + "\n";
+            myLabel.Text += passaggio + "\n\n";
             //    myLabel.Invalidate();
             myLabel.Update();
             //    myLabel.Refresh();

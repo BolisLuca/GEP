@@ -317,7 +317,7 @@ namespace Ottimizzazione
                                 Thread.Sleep(500);
                                 form2 = new Form2();
                                 form2.Show();
-                                Form2.acquisisci("      METODO   NORD-OVEST      \n\n");
+                                Form2.acquisisci("METODO   NORD-OVEST\n\n");
                             }
 
 
@@ -352,7 +352,7 @@ namespace Ottimizzazione
 
                                 dataGridViewNordOvest.Refresh();
 
-                                Thread.Sleep(5000);
+                                Thread.Sleep(1000);
 
                                 dataGridViewNordOvest.Rows[0].Cells[dataGridViewNordOvest.ColumnCount - 1].Value = differenza;
 
@@ -376,18 +376,31 @@ namespace Ottimizzazione
 
                                     dataGridViewNordOvest.Refresh();
 
-                                    Thread.Sleep(5000);
+                                    
+
+                                    if (dataGridViewNordOvest.Rows.Count != 2 && dataGridViewNordOvest.Columns.Count != 2)
+                                    {
+                                        string stepp = "Da" + dataGridViewNordOvest.Rows[0].Cells[0].Value.ToString() + " a " + dataGridViewNordOvest.Columns[1].HeaderText.ToString() + " : " + fabbisogno.ToString() + " unità a " + costo_per_prodotto.ToString() + "€ = " + costo_consegna.ToString();
+                                        Form2.acquisisci(stepp);
+                                        dataGridViewNordOvest.Columns.RemoveAt(1);
+
+                                        dataGridViewNordOvest.Rows.RemoveAt(0);
+
+                                        
+                                        dataGridViewNordOvest.Refresh();
+                                    }
+                                    else
+                                    {
+                                        string step = "Da" + dataGridViewNordOvest.Rows[0].Cells[0].Value.ToString() + " a " + dataGridViewNordOvest.Columns[1].HeaderText.ToString() + " : " + fabbisogno.ToString() + " unità a " + costo_per_prodotto.ToString() + "€ = " + costo_consegna.ToString();
+                                        Form2.acquisisci(step);
+                                        break;
+                                    }
+                                    
+                                    Thread.Sleep(1000);
 
 
-                                    dataGridViewNordOvest.Columns.RemoveAt(1);
-
-                                    dataGridViewNordOvest.Rows.RemoveAt(0);
 
 
-                                    string step = "Da" + dataGridViewNordOvest.Rows[0].Cells[0].Value.ToString() + " a " + dataGridViewNordOvest.Columns[1].HeaderText.ToString() + " : " + fabbisogno.ToString() + " unità a " + costo_per_prodotto.ToString() + "€ = " + costo_consegna.ToString();
-                                    Form2.acquisisci(step);
-
-                                    dataGridViewNordOvest.Refresh();
                                 }
                                 else //produzione minore fabbisogno 7 9
                                 {
@@ -403,7 +416,7 @@ namespace Ottimizzazione
                                     dataGridViewNordOvest.Refresh();
 
 
-                                    Thread.Sleep(5000);
+                                    Thread.Sleep(1000);
 
                                     dataGridViewNordOvest.Rows[dataGridViewNordOvest.Rows.Count - 1].Cells[1].Value = differenza;
 
@@ -422,7 +435,7 @@ namespace Ottimizzazione
 
 
                             j++;
-                        } while (dataGridViewNordOvest.Rows.Count != 2);
+                        } while (dataGridViewNordOvest.Rows.Count != 1);
 
                         string tot = "Il Costo Totale è: " + costo_totale + "€";
                         Form2.acquisisci(tot);
