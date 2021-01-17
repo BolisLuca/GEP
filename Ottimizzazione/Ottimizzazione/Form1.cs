@@ -271,8 +271,24 @@ namespace Ottimizzazione
                             MessageBox.Show("Devi prima creare la tabella iniziale", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             tabControl1.SelectedIndex = 0;
                             return;
-                            
+
                         }
+
+                        for (int i = 0; i < dataGridViewTabella.Rows.Count; i++)
+                        {
+                            for (int a = 1; a < dataGridViewTabella.Columns.Count; a++)
+                            {
+
+                                if (dataGridViewTabella.Rows[i].Cells[a].Value.ToString() != " ")
+                                {
+                                    MessageBox.Show("Assicurati di aver inserito tutti i valori", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    tabControl1.SelectedIndex = 0;
+                                    return;
+                                }
+
+                            }
+                        }
+
                         // var dt = (dataGridViewTabella.DataSource as DataTable).Rows[0];
 
                         //  DataTable TabellaNordOvest = (dataGridViewTabella.DataSource as DataTable).Copy();
@@ -460,6 +476,20 @@ namespace Ottimizzazione
                             tabControl1.SelectedIndex = 0;
                             return;
 
+                        }
+                        for (int i = 0; i < dataGridViewTabella.Rows.Count; i++)
+                        {
+                            for (int a = 1; a < dataGridViewTabella.Columns.Count; a++)
+                            {
+
+                                if (dataGridViewTabella.Rows[i].Cells[a].Value.ToString() != " ")
+                                {
+                                    MessageBox.Show("Assicurati di aver inserito tutti i valori", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    tabControl1.SelectedIndex = 0;
+                                    return;
+                                }
+
+                            }
                         }
                         int costo_totale = 0;
 

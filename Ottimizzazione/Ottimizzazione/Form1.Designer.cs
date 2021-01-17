@@ -365,6 +365,8 @@
             this.dataGridViewTabella.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridViewTabella.Size = new System.Drawing.Size(1190, 350);
             this.dataGridViewTabella.TabIndex = 2;
+            this.dataGridViewTabella.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dataGridViewTabella_CellBeginEdit);
+            this.dataGridViewTabella.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridViewTabella_EditingControlShowing);
             // 
             // tabPage2
             // 
