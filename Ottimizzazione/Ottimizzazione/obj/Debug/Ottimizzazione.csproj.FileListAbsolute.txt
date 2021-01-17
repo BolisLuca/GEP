@@ -49,3 +49,4 @@ C:\Users\andry\Source\Repos\BolisLuca\GEP\Ottimizzazione\Ottimizzazione\obj\Debu
 C:\Users\andry\Source\Repos\BolisLuca\GEP\Ottimizzazione\Ottimizzazione\obj\Debug\Ottimizzazione.pdb
 C:\Users\med19\Source\Repos\BolisLuca\GEP\Ottimizzazione\Ottimizzazione\obj\Debug\Ottimizzazione.Form2.resources
 C:\Users\hp\source\repos\BolisLuca\GEP\Ottimizzazione\Ottimizzazione\obj\Debug\Ottimizzazione.Form2.resources
+C:\Users\andry\Source\Repos\BolisLuca\GEP\Ottimizzazione\Ottimizzazione\obj\Debug\Ottimizzazione.Form2.resources

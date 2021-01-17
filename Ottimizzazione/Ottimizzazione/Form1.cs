@@ -360,7 +360,6 @@ namespace Ottimizzazione
 
 
                                 dataGridViewNordOvest.Refresh();
-
                             }
                             else
                             {
@@ -424,6 +423,10 @@ namespace Ottimizzazione
 
                             j++;
                         } while (dataGridViewNordOvest.Rows.Count != 2);
+
+                        string tot = "Il Costo Totale è: " + costo_totale + "€";
+                        Form2.acquisisci(tot);
+
                         //dataGridViewNordOvest.Rows[0].Cells[1].Value * dataGridViewNordOvest.Rows[0].Cells[data]
                         //form2.Close();
                         break;
