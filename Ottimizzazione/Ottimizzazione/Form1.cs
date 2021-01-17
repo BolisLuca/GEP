@@ -278,14 +278,22 @@ namespace Ottimizzazione
                         {
                             for (int a = 1; a < dataGridViewTabella.Columns.Count; a++)
                             {
+                                if(a==dataGridViewTabella.Columns.Count-1)
+                                {
+                                    break;
+                                }
 
-                                if (dataGridViewTabella.Rows[i].Cells[a].Value.ToString() != " ")
+                                if (dataGridViewTabella.Rows[i].Cells[a].Value.ToString() == "")
                                 {
                                     MessageBox.Show("Assicurati di aver inserito tutti i valori", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     tabControl1.SelectedIndex = 0;
                                     return;
                                 }
 
+                            }
+                            if (i == dataGridViewTabella.Rows.Count-1)
+                            {
+                                break;
                             }
                         }
 
@@ -481,14 +489,22 @@ namespace Ottimizzazione
                         {
                             for (int a = 1; a < dataGridViewTabella.Columns.Count; a++)
                             {
+                                if (a == dataGridViewTabella.Columns.Count - 1)
+                                {
+                                    break;
+                                }
 
-                                if (dataGridViewTabella.Rows[i].Cells[a].Value.ToString() != " ")
+                                if (dataGridViewTabella.Rows[i].Cells[a].Value.ToString() == "")
                                 {
                                     MessageBox.Show("Assicurati di aver inserito tutti i valori", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     tabControl1.SelectedIndex = 0;
                                     return;
                                 }
 
+                            }
+                            if (i == dataGridViewTabella.Rows.Count - 1)
+                            {
+                                break;
                             }
                         }
                         int costo_totale = 0;
