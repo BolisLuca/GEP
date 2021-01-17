@@ -345,12 +345,17 @@ namespace Ottimizzazione
 
                             if (j == 0)
                             {
-                                Thread.Sleep(500);
-                                form2 = new Form2();
-                                form2.Show();
+                                if(form2 == null)
+                                {
+                                    Thread.Sleep(500);
+                                    form2 = new Form2();
+                                    form2.Show();
+                                  
+                                }
+                                Form2.acquisisci("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  \n");
                                 Form2.acquisisci("METODO   NORD-OVEST\n\n");
                             }
-
+                           
 
                             //produzione > fabbisogno 
 
@@ -589,9 +594,14 @@ namespace Ottimizzazione
 
                             if (k == 0)
                             {
-                                Thread.Sleep(500);
-                                form2 = new Form2();
-                                form2.Show();
+                                if (form2 == null)
+                                {
+                                    Thread.Sleep(500);
+                                    form2 = new Form2();
+                                    form2.Show();
+
+                                }
+                                Form2.acquisisci("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  \n");
                                 Form2.acquisisci("      METODO  MINIMI COSTI   \n\n");
                             }
 

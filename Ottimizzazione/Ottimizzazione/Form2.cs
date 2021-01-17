@@ -11,6 +11,7 @@ namespace Ottimizzazione
             InitializeComponent();
             label1.Text = "";
             myLabel = label1;
+            this.Height =  System.Windows.Forms.Screen.PrimaryScreen.Bounds.Height;
         }
         public static void acquisisci(string passaggio)
         {
