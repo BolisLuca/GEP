@@ -478,6 +478,8 @@ namespace Ottimizzazione
 
                 case 2:
                     {
+                       
+
                         if (dataGridViewTabella.DataSource == null)
                         {
                             MessageBox.Show("Devi prima creare la tabella iniziale", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -514,7 +516,7 @@ namespace Ottimizzazione
 
                         //se produzione > fabbisogno ---> il fabbisogno verrà riempito completamente 
 
-
+                        dataGridViewMinimiCosti.DataSource = null;
                         dataGridViewMinimiCosti.Rows.Clear();
                         dataGridViewMinimiCosti.Columns.Clear();
 
@@ -568,6 +570,12 @@ namespace Ottimizzazione
                         dataGridViewMinimiCosti.RowHeadersVisible = false;
                         dataGridViewMinimiCosti.Refresh();
 
+                        foreach (DataGridViewColumn column in dataGridViewMinimiCosti.Columns)
+                        {
+                            column.SortMode = DataGridViewColumnSortMode.NotSortable;
+
+
+                        }
 
                         int k = 0;
 
@@ -702,7 +710,7 @@ namespace Ottimizzazione
 
                                 dataGridViewMinimiCosti.Refresh();
 
-                                Thread.Sleep(5000);
+                                Thread.Sleep(1000);
 
                                 dt.Rows[yposizionemin][dt.Columns.Count - 1] = differenza;
 
@@ -740,19 +748,12 @@ namespace Ottimizzazione
 
                                     dataGridViewMinimiCosti.Refresh();
 
-                                    Thread.Sleep(5000);
+                                    Thread.Sleep(1000);
 
 
                                     //dataGridViewMinimiCosti.Columns.RemoveAt(xposizionemin);
 
                                     //dataGridViewMinimiCosti.Rows.RemoveAt(yposizionemin);
-
-                                    dt.Columns.RemoveAt(xposizionemin);
-
-                                    dt.Rows.RemoveAt(yposizionemin);
-
-
-                                    dt.AcceptChanges();
 
                                     //  dataGridViewMinimiCosti.DataSource = typeof(DataTable);
 
@@ -769,11 +770,29 @@ namespace Ottimizzazione
                                     //   dataGridViewMinimiCosti.DataSource = dt;
                                     dataGridViewMinimiCosti.Refresh();
 
-                                    string step = "Da" + dt.Rows[yposizionemin][0].ToString() + " a " + dt.Columns[xposizionemin].ToString() + " : " + fabbisogno.ToString() + " unità a " + costo_per_prodotto.ToString() + "€ = " + costo_consegna.ToString();
-                                    Form2.acquisisci(step);
+                                    if (dt.Rows.Count != 2 && dt.Columns.Count != 2)
+                                    {
 
 
-                                }
+                                        string step = "Da" + dt.Rows[yposizionemin][0].ToString() + " a " + dt.Columns[xposizionemin].ToString() + " : " + fabbisogno.ToString() + " unità a " + costo_per_prodotto.ToString() + "€ = " + costo_consegna.ToString();
+                                        Form2.acquisisci(step);
+                                        dt.Columns.RemoveAt(xposizionemin);
+
+                                        dt.Rows.RemoveAt(yposizionemin);
+
+
+                                        dt.AcceptChanges();
+
+                                    }
+                                    else
+                                    {
+                                        string step = "Da" + dt.Rows[yposizionemin][0].ToString() + " a " + dt.Columns[xposizionemin].ToString() + " : " + fabbisogno.ToString() + " unità a " + costo_per_prodotto.ToString() + "€ = " + costo_consegna.ToString();
+                                        Form2.acquisisci(step);
+                                        break;
+                                    }
+
+
+                                    }
                                 else //produzione minore fabbisogno 7 9
                                 {
                                     int differenza = fabbisogno - produzione;
@@ -788,7 +807,7 @@ namespace Ottimizzazione
                                     dataGridViewMinimiCosti.Refresh();
 
 
-                                    Thread.Sleep(5000);
+                                    Thread.Sleep(1000);
 
                                     dt.Rows[dataGridViewMinimiCosti.Rows.Count - 1][xposizionemin] = differenza;
 
@@ -796,7 +815,7 @@ namespace Ottimizzazione
                                     Form2.acquisisci(step);
                                     dataGridViewMinimiCosti.Refresh();
 
-                                    Thread.Sleep(5000);
+                                    Thread.Sleep(1000);
 
                                     //dataGridViewMinimiCosti.Rows.RemoveAt(yposizionemin);
                                     dt.Rows.RemoveAt(yposizionemin);
@@ -823,8 +842,10 @@ namespace Ottimizzazione
 
 
                             k++;
-                        } while (dataGridViewMinimiCosti.Rows.Count != 2);
-                        //
+                        } while (dataGridViewMinimiCosti.Rows.Count != 1);
+                        string tot = "Il Costo Totale è: " + costo_totale + "€";
+                        Form2.acquisisci(tot);
+
                         break;
                     }
             }

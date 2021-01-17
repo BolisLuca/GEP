@@ -395,11 +395,14 @@
             this.dataGridViewNordOvest.Location = new System.Drawing.Point(1, 0);
             this.dataGridViewNordOvest.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewNordOvest.Name = "dataGridViewNordOvest";
+            this.dataGridViewNordOvest.ReadOnly = true;
             this.dataGridViewNordOvest.RowHeadersWidth = 51;
             this.dataGridViewNordOvest.RowTemplate.Height = 24;
             this.dataGridViewNordOvest.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridViewNordOvest.Size = new System.Drawing.Size(1190, 352);
             this.dataGridViewNordOvest.TabIndex = 3;
+            this.dataGridViewNordOvest.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dataGridViewTabella_CellBeginEdit);
+            this.dataGridViewNordOvest.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridViewTabella_EditingControlShowing);
             // 
             // tabPage3
             // 
@@ -428,11 +431,14 @@
             this.dataGridViewMinimiCosti.Location = new System.Drawing.Point(1, 1);
             this.dataGridViewMinimiCosti.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewMinimiCosti.Name = "dataGridViewMinimiCosti";
+            this.dataGridViewMinimiCosti.ReadOnly = true;
             this.dataGridViewMinimiCosti.RowHeadersWidth = 51;
             this.dataGridViewMinimiCosti.RowTemplate.Height = 24;
             this.dataGridViewMinimiCosti.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridViewMinimiCosti.Size = new System.Drawing.Size(1190, 352);
             this.dataGridViewMinimiCosti.TabIndex = 4;
+            this.dataGridViewMinimiCosti.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dataGridViewTabella_CellBeginEdit);
+            this.dataGridViewMinimiCosti.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridViewTabella_EditingControlShowing);
             // 
             // Form1
             // 
